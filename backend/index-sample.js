@@ -26,9 +26,10 @@ exports.handler = function(event, context) {
   };
 
   https.get(httpOptions, function(res) {
+    console.log('Remote server rate limit remaining: ', res.headers['x-ratelimit-remaining']);
     if (res.statusCode != 200) {
-      console.log('Received non-ok status code from Untappd: ', res.statusCode);
-      context.fail('Request to Untappd failed');
+      console.log('Received non-ok status code from remote: ', res.statusCode);
+      context.fail('Request to remote failed');
     }
 
     var s3params = {
@@ -51,7 +52,7 @@ exports.handler = function(event, context) {
 
   }).on('error', function(e) {
     console.log(e.message);
-    context.fail('Failed to get response from Untappd');
+    context.fail('Failed to get response from remote');
   });
 
 };
