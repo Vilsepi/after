@@ -11,7 +11,6 @@ var config = {
 };
 
 exports.handler = function(event, context) {
-  /*console.log('Received request:', JSON.stringify(event, null, 2));*/
 
   var httpQueryParams = {
     client_id: config.untappdClientId,
@@ -31,26 +30,22 @@ exports.handler = function(event, context) {
       context.fail('Received non-ok status code from Untappd: ', res.statusCode);
     }
 
-    var body = '';
-    res.on('data', function(chunk) { body += chunk; });
-    res.on('end', function() {
+    var s3params = {
+      'Bucket': config.bucketName,
+      'Key': 'data/thepub.json',
+      'ContentLength': res.headers['content-length'],
+      'ContentType': 'application/json',
+      'Body': res
+    };
 
-      var s3params = {
-        'Bucket': config.bucketName,
-        'Key': 'data/thepub.json',
-        'ContentType': 'application/json',
-        'Body': body
-      };
-
-      s3.putObject(s3params, function(err, data) {
-        if (err) {
-          console.log(err, err.stack);
-          context.fail('Error while uploading to S3');
-        }
-        else {
-          context.succeed('Successfully updated data');
-        }
-      });
+    s3.upload(s3params, function(err, data) {
+      if (err) {
+        console.log(err, err.stack);
+        context.fail('Error while uploading to S3');
+      }
+      else {
+        context.succeed('Successfully updated data');
+      }
     });
 
   }).on('error', function(e) {
