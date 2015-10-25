@@ -22,12 +22,13 @@ exports.handler = function(event, context) {
   };
   var httpOptions = {
     host: 'api.untappd.com',
-    path: '/v4/thepub/local'+'?'+qs.stringify(httpQueryParams)
+    path: '/v4/thepub/local' + '?' + qs.stringify(httpQueryParams)
   };
 
   https.get(httpOptions, function(res) {
     if (res.statusCode != 200) {
-      context.fail('Received non-ok status code from Untappd: ', res.statusCode);
+      console.log('Received non-ok status code from Untappd: ', res.statusCode);
+      context.fail('Request to Untappd failed');
     }
 
     var s3params = {
@@ -40,8 +41,8 @@ exports.handler = function(event, context) {
 
     s3.upload(s3params, function(err, data) {
       if (err) {
-        console.log(err, err.stack);
-        context.fail('Error while uploading to S3');
+        console.log('Error while uploading to S3: ', err, err.stack);
+        context.fail('Failed to upload data to S3');
       }
       else {
         context.succeed('Successfully updated data');
@@ -50,7 +51,7 @@ exports.handler = function(event, context) {
 
   }).on('error', function(e) {
     console.log(e.message);
-    context.fail('Failed to get data from Untappd');
+    context.fail('Failed to get response from Untappd');
   });
 
 };
