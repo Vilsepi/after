@@ -3,6 +3,12 @@ var qs = require('querystring');
 var AWS = require('aws-sdk');
 var s3 = new AWS.S3();
 
+/*
+Calls Untappd API to get latest beer checkins in a specific geographical area
+and stores the response json to S3. Untappd API credentials are required for
+all requests.
+*/
+
 var config = {
   untappdClientId: '',
   untappdClientSecret: '',
