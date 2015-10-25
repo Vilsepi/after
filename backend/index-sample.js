@@ -15,10 +15,10 @@ exports.handler = function(event, context) {
   var httpQueryParams = {
     client_id: config.untappdClientId,
     client_secret: config.untappdClientSecret,
-    lat: 61.498171,
-    lng: 23.762101,
+    lat: 61.498098,
+    lng: 23.760781,
     dist_pref: 'km',
-    radius: 2
+    radius: 1.5
   };
   var httpOptions = {
     host: 'api.untappd.com',
