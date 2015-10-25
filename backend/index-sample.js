@@ -4,7 +4,6 @@ var AWS = require('aws-sdk');
 var s3 = new AWS.S3();
 
 var config = {
-  untappdUrl: 'https://api.untappd.com/v4/thepub/local',
   untappdClientId: '',
   untappdClientSecret: '',
   bucketName: ''
