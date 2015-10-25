@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300,500,300italic);
+
+body {
+  background: #f2f2f2;
+  font-family: 'Alegreya Sans', cursive;
+}
+
+.accordion {
+  margin-top: 20px;
+}
+
+.accordion .accordion-navigation > a {
+ font-family: 'Alegreya Sans', cursive;
+ font-size: 18px;
+}
+
+/* Responsive line-break */
+.br { display: block; }
+@media screen and (min-width: 40.063em){
+  .br { display: inline; }
+}
+
+h2 {
+  font-weight: 300;
+  color: #B30B38;
+  margin-bottom: 20px;
+}
+
+.tip {
+  margin-bottom: 15px;
+  line-height: 2.1em;
+}
+
+.venue-tip {
+  font-size: 38px;
+}
+
+.beer-tip {
+  font-size: 28px;
+  color: black;
+}
+
+.beer-tip a {
+  font-weight: 300;
+  color: #EE6628;
+}
+
+.beer-tip i {
+  font-size: 80%;
+  color: #FE8852;
+  margin-left: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #B30B38;
+}

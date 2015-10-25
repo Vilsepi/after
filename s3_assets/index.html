@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="afteri">
+<head>
+  <title>Afterille</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="assets/vendor/foundation-5.5.3.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+<body>
+<div class="container" ng-controller="afteriCtrl">
+  
+  <div class="row">
+    <h2>Päivän afteri</h2>
+  </div>
+
+  <div id="beer-list">
+    <div class="row tip" ng-repeat="tip in suggestions">
+      <div class="small-12 columns venue-tip">
+        <a title="id={{ tip.venue.venue_id }}" href="{{ tip.venue.foursquare.foursquare_url }}">{{ tip.venue.venue_name }}</a>
+      </div>
+      <div class="small-12 columns beer-tip">
+        <a class="br" title="id={{ tip.beer.bid }}" href="{{ tip.brewery.contact.url }}">{{ tip.beer.beer_name| limitTo:35 }}</a>
+        <i class="br">{{ tip.beer.beer_abv }}% - {{ tip.beer.beer_style }}</i>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <ul class="accordion" data-accordion>
+      <li class="accordion-navigation">
+        <a href="#moreBeer">Lisää vaihtoehtoja</a>
+        <div id="moreBeer" class="content">
+          <ul>
+            <li ng-repeat="tip in checkins">
+              <span class="br"><b>{{ tip.venue.venue_name }}</b></span> <span class="br">{{ tip.beer.beer_name }}</span>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>
+<script src="assets/vendor/jquery-1.11.3.min.js"></script>
+<script src="assets/vendor/modernizr-2.8.3.min.js"></script>
+<script src="assets/vendor/angular-1.4.7.min.js"></script>
+<script src="assets/vendor/foundation-5.5.3.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script type="text/javascript">$(document).ready(function(){$(document).foundation();});
+</script>
+</body>
+</html>
