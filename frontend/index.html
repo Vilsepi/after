@@ -25,11 +25,11 @@
   <div id="beer-list">
     <div class="row tip" ng-repeat="tip in suggestions">
       <div class="small-12 columns venue-tip">
-        <a title="id={{ tip.venue.venue_id }}" href="{{ tip.venue.foursquare.foursquare_url }}">{{ tip.venue.venue_name }}</a>
+        <a title="id={{ tip.venue.venue_id }}" href="{{ tip.venue.foursquare.foursquare_url }}" ng-bind="tip.venue.venue_name"></a>
       </div>
       <div class="small-12 columns beer-tip">
-        <a class="br" title="id={{ tip.beer.bid }}" href="{{ tip.brewery.contact.url }}">{{ tip.beer.beer_name| limitTo:35 }}</a>
-        <i class="br">{{ tip.beer.beer_abv }}% - {{ tip.beer.beer_style }}</i>
+        <a class="br" title="id={{ tip.beer.bid }}" href="{{ tip.brewery.contact.url }}" ng-bind="tip.beer.beer_name| limitTo:35"></a>
+        <i class="br"><span></span>{{ tip.beer.beer_abv }}% - {{ tip.beer.beer_style }}</i>
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@
         <div id="moreBeer" class="content">
           <ul>
             <li ng-repeat="tip in checkins">
-              <span class="br"><b>{{ tip.venue.venue_name }}</b></span> <span class="br">{{ tip.beer.beer_name }}</span>
+              <span class="br"><b ng-bind="tip.venue.venue_name"></b></span> <span class="br" ng-bind="tip.beer.beer_name"></span>
             </li>
           </ul>
         </div>
