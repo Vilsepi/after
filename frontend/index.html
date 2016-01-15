@@ -4,7 +4,7 @@
   <title>Afterille</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="assets/vendor/foundation-5.5.3.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/vendor/foundation-6.0.5.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -16,6 +16,7 @@
   </script>
 </head>
 <body>
+
 <div class="container" ng-controller="afteriCtrl">
   
   <div class="row">
@@ -35,9 +36,11 @@
   </div>
 
   <div class="row">
+
+  <!-- TODO Accordion broke in Foundation 6
     <ul class="accordion" data-accordion>
       <li class="accordion-navigation">
-        <a href="#moreBeer">Lisää vaihtoehtoja</a>
+        <a href="#moreBeer">Lisää vaihtoehtoja</a>-->
         <div id="moreBeer" class="content">
           <ul>
             <li ng-repeat="tip in checkins">
@@ -45,18 +48,18 @@
             </li>
           </ul>
         </div>
-      </li>
-    </ul>
+      <!--</li>
+    </ul>-->
   </div>
-
 </div>
-<script src="assets/vendor/jquery-1.11.3.min.js"></script>
+
+<script src="assets/vendor/jquery-2.2.0.min.js"></script>
 <script src="assets/vendor/modernizr-2.8.3.min.js"></script>
 <script src="assets/vendor/angular-1.4.7.min.js"></script>
-<script src="assets/vendor/foundation-5.5.3.min.js"></script>
+<script src="assets/vendor/what-input.min.js"></script>
+<script src="assets/vendor/foundation-6.0.5.min.js"></script>
 <script src="assets/vendor/lodash-3.10.1.min.js"></script>
 <script src="assets/js/main.js"></script>
-<script type="text/javascript">$(document).ready(function(){$(document).foundation();});
-</script>
+<script type="text/javascript">$(document).ready(function(){$(document).foundation();});</script>
 </body>
 </html>

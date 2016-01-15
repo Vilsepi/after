@@ -1,3 +1,4 @@
+
 var venueBlacklist = {
   1379610: "Amica-ravintola Valtatie 30",
   1782433: "As Oy Sorsapuisto",
