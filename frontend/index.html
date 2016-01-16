@@ -31,8 +31,8 @@
         <a title="id={{ tip.venue.venue_id }}" href="{{ tip.venue.foursquare.foursquare_url }}" ng-bind="tip.venue.venue_name"></a>
       </div>
       <div class="small-12 columns beer-tip">
-        <a class="br" title="id={{ tip.beer.bid }}" href="{{ tip.brewery.contact.url }}" ng-bind="tip.beer.beer_name| limitTo:35"></a>
-        <i class="br">
+        <a class="br beer-tip-name" title="id={{ tip.beer.bid }}" href="{{ tip.brewery.contact.url }}" ng-bind="tip.beer.beer_name| limitTo:35"></a>
+        <i class="br beer-tip-details">
           <span ng-bind="tip.beer.beer_abv + '%'"></span>
           <span ng-bind="tip.beer.beer_style"></span>
         </i>

@@ -15,7 +15,6 @@ body {
   font-family: serif;
 }
 
-/* Main title including mobile version */
 h1 {
   color: #383838;
   margin: 30px 0 55px 0;
@@ -23,35 +22,46 @@ h1 {
   font-family: 'Lobster', serif;
   text-align: center;
 }
+
+/* Mobile-optimized */
 @media screen and (max-width: 40em){
   h1 {
-    margin: 10px 0 25px 0;
-    font-size: 55px;
+    margin: 5px 0 20px 0;
+    font-size: 45px;
+  }
+  .beer-tip-name {
+    font-size: 20px;
+  }
+
+  .beer-tip-details {
+    font-size: 16px;
   }
 }
 
-.tip {
-  margin-bottom: 25px;
-  line-height: 2.1em;
+/* Desktop-optimized */
+@media only screen and (min-width: 40.063em) {
+  .beer-tip-name {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+  .beer-tip-details {
+    font-size: 24px;
+  }
 }
 
 .venue-tip {
   font-family: 'Lobster', serif;
   font-size: 40px;
+  line-height: 0.9em;
 }
 
 .beer-tip {
-  font-size: 28px;
   color: #555;
 }
 
-.beer-tip a {
-  font-weight: 300;
-  margin-right: 10px;
-}
-
-.beer-tip i {
-  font-size: 80%;
+.tip {
+  margin-bottom: 25px;
 }
 
 a {
