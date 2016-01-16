@@ -24,6 +24,7 @@
   </div>
 
   <!-- Primary beer suggestions -->
+  <div ng-show="suggestions == null" class="please-wait">Arvotaan afteripaikkaa, maltapa hetki...</div>
   <div id="beer-list">
     <div class="row tip" ng-repeat="tip in suggestions">
       <div class="small-12 columns venue-tip">

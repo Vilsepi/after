@@ -8,15 +8,22 @@
 
 body {
   background: #f0f0f4;
-  font-family: cursive;
+  font-family: serif;
 }
 
+/* Main title including mobile version */
 h1 {
   color: #383838;
-  margin: 30px 0 45px 0;
-  font-size: 72px;
-  font-family: 'Lobster', cursive;
+  margin: 30px 0 55px 0;
+  font-size: 85px;
+  font-family: 'Lobster', serif;
   text-align: center;
+}
+@media screen and (max-width: 40em){
+  h1 {
+    margin: 10px 0 25px 0;
+    font-size: 55px;
+  }
 }
 
 .tip {
@@ -25,7 +32,7 @@ h1 {
 }
 
 .venue-tip {
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster', serif;
   font-size: 40px;
 }
 
@@ -54,6 +61,13 @@ a:hover {
 }
 a:active {
   color: #000;
+}
+
+.please-wait {
+  text-align: center;
+  color: #666;
+  font-size: 30px;
+  font-style: italic;
 }
 
 .accordion {
