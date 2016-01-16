@@ -20,11 +20,13 @@ var beerBlacklist = {
 angular.module('afteri', []).controller('afteriCtrl', ['$scope', '$http', function($scope, $http) {
 
   $http.get('data/thepub.json').then(function (response) {
-    var checkins = _.reject(response.data.response.checkins.items, function(item) {
+
+    var checkins = response.data.response.checkins.items;
+    var filteredCheckins = _.reject(checkins, function(item) {
       return venueBlacklist[item.venue.venue_id] || beerBlacklist[item.beer.bid];
     });
 
-    var topSuggestions = _(checkins)
+    var topSuggestions = _(filteredCheckins)
       .uniq('venue.venue_id')
       .sortBy('beer.beer_abv')
       .reverse()
@@ -32,6 +34,7 @@ angular.module('afteri', []).controller('afteriCtrl', ['$scope', '$http', functi
       .value();
 
     $scope.suggestions = topSuggestions;
+    $scope.filteredCheckins = filteredCheckins;
     $scope.checkins = checkins;
 
   });
