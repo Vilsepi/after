@@ -106,3 +106,12 @@ a:active {
 .label {
   margin-right: 3px;
 }
+
+.footer {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 22px;
+}
+.footer a {
+  color: #ccc;
+}
