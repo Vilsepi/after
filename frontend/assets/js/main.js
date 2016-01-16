@@ -19,7 +19,7 @@ angular.module('afteri', []).controller('afteriCtrl', ['$scope', '$http', functi
     });
 
     var topSuggestions = _(checkins)
-      .unique('venue.venue_id')
+      .uniq('venue.venue_id')
       .sortBy('beer.beer_abv')
       .reverse()
       .take(3)
