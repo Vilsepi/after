@@ -29,7 +29,7 @@ angular.module('afteri', []).controller('afteriCtrl', ['$scope', '$http', functi
     });
 
     var topSuggestions = _(filteredCheckins)
-      .uniq('venue.venue_id')
+      .uniqBy('venue.venue_id')
       .take(3)
       .sortBy('beer.beer_abv')
       .reverse()
