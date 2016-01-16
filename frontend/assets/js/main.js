@@ -4,6 +4,7 @@ var venueBlacklist = {
   1379610: "Amica-ravintola Valtatie 30",
   1782433: "As Oy Sorsapuisto",
   951950:  "Keskustori",
+  3324214: "Nalkala",
   125270:  "Näsin sauna",
   865959:  "Stefan's Steakhouse",
   1293012: "Tampere",
