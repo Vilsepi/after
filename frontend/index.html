@@ -49,9 +49,8 @@
         <div id="thePub" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="thePub-heading">
           <div ng-repeat="c in checkins">
           <b>{{ c.beer.beer_name }}</b>, {{ c.beer.beer_abv }}% ({{ c.beer.beer_style }}, {{ c.brewery.brewery_name }}, {{ c.brewery.country_name }})<br>
-          <b><a href="{{ c.venue.foursquare.foursquare_url }}">{{ c.venue.venue_name }}</a></b>
-          <br>
-          <span class="label" ng-repeat="category in c.venue.categories.items">{{ category.category_name}}</span><span class="secondary label">{{ c.venue.primary_category }}</span><br>
+          <b><a href="{{ c.venue.foursquare.foursquare_url }}">{{ c.venue.venue_name }}</a></b><br>
+          <span class="label" ng-repeat="category in c.venue.categories.items">{{ category.category_name}}</span><br>
           {{ c.user.first_name }} {{ c.user.last_name }} ({{ c.user.user_name }}): {{ c.rating_score }}/5 {{ c.checkin_comment }}<br>
           {{ c.created_at }}<br>
           <br>
