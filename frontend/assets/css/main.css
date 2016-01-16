@@ -84,3 +84,7 @@ a:active {
 .accordion-title::before {
   display: none;
 }
+
+.label {
+  margin-right: 3px;
+}
