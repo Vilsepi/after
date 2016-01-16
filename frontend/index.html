@@ -16,13 +16,13 @@
   </script>
 </head>
 <body>
-
 <div class="container" ng-controller="afteriCtrl">
   
   <div class="row">
     <h2>Päivän afteri</h2>
   </div>
 
+  <!-- Primary beer suggestions -->
   <div id="beer-list">
     <div class="row tip" ng-repeat="tip in suggestions">
       <div class="small-12 columns venue-tip">
@@ -35,24 +35,23 @@
     </div>
   </div>
 
+  <!-- More beer accordion -->
   <div class="row">
-
-  <!-- TODO Accordion broke in Foundation 6
-    <ul class="accordion" data-accordion>
-      <li class="accordion-navigation">
-        <a href="#moreBeer">Lisää vaihtoehtoja</a>-->
-        <div id="moreBeer" class="content">
+    <ul class="accordion" data-accordion data-allow-all-closed="true" role="tablist">
+      <li class="accordion-item">
+        <a href="#moreBeer" role="tab" class="accordion-title" id="moreBeer-heading" aria-controls="moreBeer">Lisää vaihtoehtoja</a>
+        <div id="moreBeer" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="moreBeer-heading">
           <ul>
             <li ng-repeat="tip in checkins">
               <span class="br"><b ng-bind="tip.venue.venue_name"></b></span> <span class="br" ng-bind="tip.beer.beer_name"></span>
             </li>
           </ul>
         </div>
-      <!--</li>
-    </ul>-->
+      </li>
+    </ul>
   </div>
-</div>
 
+</div>
 <script src="assets/vendor/jquery-2.2.0.min.js"></script>
 <script src="assets/vendor/modernizr-2.8.3.min.js"></script>
 <script src="assets/vendor/angular-1.4.8.min.js"></script>
