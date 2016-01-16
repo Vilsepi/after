@@ -19,7 +19,7 @@ var beerBlacklist = {
 
 angular.module('afteri', []).controller('afteriCtrl', ['$scope', '$http', function($scope, $http) {
 
-  $http.get('data/thepub.json').then(function (response) {
+  $http.get('/data/thepub.json').then(function (response) {
 
     var checkins = response.data.response.checkins.items;
     var filteredCheckins = _.reject(checkins, function(item) {
