@@ -41,22 +41,11 @@
   </div>
 
   
-  <div class="row">
+  <div class="row" ng-cloak>
     <ul class="accordion" data-accordion data-allow-all-closed="true" role="tablist">
-      <!-- More beer accordion -->
-      <li class="accordion-item">
-        <a href="#moreBeer" role="tab" class="accordion-title" id="moreBeer-heading" aria-controls="moreBeer">Lisää ehdotuksia</a>
-        <div id="moreBeer" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="moreBeer-heading">
-          <ul>
-            <li ng-repeat="tip in filteredCheckins">
-              <span class="br"><b ng-bind="tip.venue.venue_name"></b></span> <span class="br" ng-bind="tip.beer.beer_name"></span>
-            </li>
-          </ul>
-        </div>
-      </li>
       <!-- The Pub debug accordion -->
       <li class="accordion-item">
-        <a href="#thePub" role="tab" class="accordion-title" id="thePub-heading" aria-controls="thePub">Tarkemmat tiedot (Debug)</a>
+        <a href="#thePub" role="tab" class="accordion-title" id="thePub-heading" aria-controls="thePub">Lisää ehdotuksia</a>
         <div id="thePub" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="thePub-heading">
           <div ng-repeat="c in checkins">
           <b>{{ c.beer.beer_name }}</b>, {{ c.beer.beer_abv }}% ({{ c.beer.beer_style }}, {{ c.brewery.brewery_name }}, {{ c.brewery.country_name }})<br>
