@@ -43,11 +43,11 @@ h1 {
 
 .beer-tip a {
   font-weight: 300;
+  margin-right: 10px;
 }
 
 .beer-tip i {
   font-size: 80%;
-  margin-left: 10px;
 }
 
 a {
