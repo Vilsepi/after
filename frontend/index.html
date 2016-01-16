@@ -11,8 +11,7 @@
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-34074502-4', 'auto');
-  ga('send', 'pageview');
+  ga('create', 'UA-34074502-4', 'auto'); ga('send', 'pageview');
   </script>
 </head>
 <body>
@@ -45,7 +44,7 @@
     <ul class="accordion" data-accordion data-allow-all-closed="true" role="tablist">
       <!-- More beer accordion -->
       <li class="accordion-item">
-        <a href="#moreBeer" role="tab" class="accordion-title" id="moreBeer-heading" aria-controls="moreBeer">Lisää vaihtoehtoja</a>
+        <a href="#moreBeer" role="tab" class="accordion-title" id="moreBeer-heading" aria-controls="moreBeer">Lisää ehdotuksia</a>
         <div id="moreBeer" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="moreBeer-heading">
           <ul>
             <li ng-repeat="tip in filteredCheckins">
@@ -56,7 +55,7 @@
       </li>
       <!-- The Pub debug accordion -->
       <li class="accordion-item">
-        <a href="#thePub" role="tab" class="accordion-title" id="thePub-heading" aria-controls="thePub">The Pub (Debug)</a>
+        <a href="#thePub" role="tab" class="accordion-title" id="thePub-heading" aria-controls="thePub">Tarkemmat tiedot (Debug)</a>
         <div id="thePub" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="thePub-heading">
           <div ng-repeat="c in checkins">
           <b>{{ c.beer.beer_name }}</b>, {{ c.beer.beer_abv }}% ({{ c.beer.beer_style }}, {{ c.brewery.brewery_name }}, {{ c.brewery.country_name }})<br>

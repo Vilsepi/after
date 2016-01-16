@@ -1,18 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300,500,300italic);
-
-body {
-  background: #f2f2f2;
-  font-family: 'Alegreya Sans', cursive;
-}
-
-.accordion {
-  margin-top: 20px;
-}
-
-.accordion .accordion-navigation > a {
- font-family: 'Alegreya Sans', cursive;
- font-size: 18px;
-}
+@import url(https://fonts.googleapis.com/css?family=Lobster);
 
 /* Responsive line-break */
 .br { display: block; }
@@ -20,43 +6,67 @@ body {
   .br { display: inline; }
 }
 
-h2 {
-  font-weight: 300;
-  color: #B30B38;
-  margin-bottom: 20px;
+body {
+  background: #f0f0f4;
+  font-family: cursive;
+}
+
+h1 {
+  color: #383838;
+  margin: 30px 0 45px 0;
+  font-size: 72px;
+  font-family: 'Lobster', cursive;
+  text-align: center;
 }
 
 .tip {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   line-height: 2.1em;
 }
 
 .venue-tip {
-  font-size: 38px;
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
 }
 
 .beer-tip {
   font-size: 28px;
-  color: black;
+  color: #555;
 }
 
 .beer-tip a {
   font-weight: 300;
-  color: #EE6628;
 }
 
 .beer-tip i {
   font-size: 80%;
-  color: #FE8852;
   margin-left: 10px;
 }
 
 a {
-  text-decoration: none;
-  color: #333;
+  color: #222;
+}
+a:visited {
+  color: #222;
+}
+a:hover {
+  color: #000;
+}
+a:active {
+  color: #000;
 }
 
-a:hover {
-  text-decoration: underline;
-  color: #B30B38;
+.accordion {
+  margin-top: 20px;
+  background: none;
+}
+
+.accordion-title {
+  font-size: 18px;
+  color: black;
+  background: none;
+}
+
+.accordion-title::before {
+  display: none;
 }
