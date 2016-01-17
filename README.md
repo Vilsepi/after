@@ -1,4 +1,4 @@
-# [Afterille](http://after.heap.fi/)
+# [After.heap.fi](http://after.heap.fi/)
 
 A simple web app that suggests beers and bars for afterwork.
 
