@@ -115,10 +115,12 @@ a:active {
 }
 
 .footer {
-  margin-top: 60px;
+  margin-top: 80px;
+  margin-bottom: 30px;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
+  color: #bbb;
 }
 .footer a {
-  color: #ccc;
+  color: #bbb;
 }
