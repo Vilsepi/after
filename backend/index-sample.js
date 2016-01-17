@@ -17,13 +17,20 @@ var config = {
 
 exports.handler = function(event, context) {
 
+  var area = 'tampere';
+  var areas = {
+    'tampere':  {lat: 61.4985, lng: 23.7717, radius: 1.06},
+    'helsinki': {lat: 60.1671, lng: 24.9409, radius: 1.49},
+  };
+
   var httpQueryParams = {
     client_id: config.untappdClientId,
-    client_secret: config.untappdClientSecret,
-    lat: 61.4985,
-    lng: 23.7717,
-    radius: 1.06
+    client_secret: config.untappdClientSecret
   };
+
+  /* Add geofencing parameters to query */
+  for (var attr in areas[area]) { httpQueryParams[attr] = areas[area][attr]; }
+
   var httpOptions = {
     host: 'api.untappd.com',
     path: '/v4/thepub/local' + '?' + qs.stringify(httpQueryParams)
@@ -38,7 +45,7 @@ exports.handler = function(event, context) {
 
     var s3params = {
       'Bucket': config.bucketName,
-      'Key': 'data/thepub.json',
+      'Key': 'data/thepub-' + area + '.json',
       'ContentLength': res.headers['content-length'],
       'ContentType': 'application/json',
       'Body': res

@@ -22,7 +22,14 @@ var beerBlacklist = {
 
 angular.module('afteri', []).controller('afteriCtrl', ['$scope', '$http', function($scope, $http) {
 
-  $http.get('/data/thepub.json').then(function (response) {
+  if (window.location.search.indexOf("Helsinki") >= 0) {
+    url = '/data/thepub-helsinki.json';
+  }
+  else {
+    url = '/data/thepub-tampere.json';
+  }
+
+  $http.get(url).then(function (response) {
 
     var checkins = response.data.response.checkins.items;
     var filteredCheckins = _.reject(checkins, function(item) {
