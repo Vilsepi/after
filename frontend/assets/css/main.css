@@ -108,6 +108,12 @@ a:active {
   margin-right: 3px;
 }
 
+/* Untappd IDs, used to blacklist items */
+.uid {
+  font-size: 0.7em;
+  color: #ccc;
+}
+
 .footer {
   margin-top: 60px;
   text-align: center;

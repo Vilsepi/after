@@ -28,10 +28,10 @@
   <div id="beer-list">
     <div class="row tip" ng-repeat="tip in suggestions">
       <div class="small-12 columns venue-tip">
-        <a title="id={{ tip.venue.venue_id }}" href="{{ tip.venue.foursquare.foursquare_url }}" ng-bind="tip.venue.venue_name"></a>
+        <a href="{{ tip.venue.foursquare.foursquare_url }}" ng-bind="tip.venue.venue_name"></a>
       </div>
       <div class="small-12 columns beer-tip">
-        <a class="br beer-tip-name" title="id={{ tip.beer.bid }}" href="{{ tip.brewery.contact.url }}" ng-bind="tip.beer.beer_name| limitTo:35"></a>
+        <a class="br beer-tip-name" title="{{ tip.brewery.brewery_name }}" href="{{ tip.brewery.contact.url }}" ng-bind="tip.beer.beer_name| limitTo:35"></a>
         <i class="br beer-tip-details">
           <span ng-bind="tip.beer.beer_abv + '%'"></span>
           <span ng-bind="tip.beer.beer_style"></span>
@@ -48,9 +48,9 @@
         <a href="#thePub" role="tab" class="accordion-title" id="thePub-heading" aria-controls="thePub">Lisää ehdotuksia</a>
         <div id="thePub" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="thePub-heading">
           <div class="checkin" ng-repeat="c in checkins">
-          <b><a href="{{ c.venue.foursquare.foursquare_url }}">{{ c.venue.venue_name }}</a></b><br>
+          <b><a href="{{ c.venue.foursquare.foursquare_url }}">{{ c.venue.venue_name }}</a></b> <span class="uid">{{ c.venue.venue_id }}</span><br>
           <span class="label" ng-repeat="category in c.venue.categories.items">{{ category.category_name}}</span><br>
-          <b>{{ c.beer.beer_name }}</b>, {{ c.beer.beer_abv }}% ({{ c.beer.beer_style }}, {{ c.brewery.brewery_name }}, {{ c.brewery.country_name }})<br>
+          <b>{{ c.beer.beer_name }}</b>, {{ c.beer.beer_abv }}% ({{ c.beer.beer_style }}, {{ c.brewery.brewery_name }}, {{ c.brewery.country_name }}) <span class="uid">{{ c.beer.bid }}</span><br>
           {{ c.rating_score }}/5 <i>{{ c.checkin_comment }}</i> -{{ c.user.first_name }} {{ c.user.last_name }} ({{ c.user.user_name }})
           </div>
         </div>
