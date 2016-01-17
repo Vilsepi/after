@@ -37,7 +37,7 @@ angular.module('afteri', []).controller('afteriCtrl', ['$scope', '$http', functi
       .value();
 
     $scope.suggestions = topSuggestions;
-    $scope.checkins = checkins;
+    $scope.checkins = filteredCheckins;
 
   });
 
