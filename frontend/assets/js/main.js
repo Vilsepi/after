@@ -3,6 +3,7 @@ var venueBlacklist = {
   547302:  "Ale Pupi",
   1379610: "Amica-ravintola Valtatie 30",
   1782433: "As Oy Sorsapuisto",
+  1502638: "Hatanpää",
   951950:  "Keskustori",
   3324214: "Nalkala",
   125270:  "Näsin sauna",
@@ -10,7 +11,6 @@ var venueBlacklist = {
   1293012: "Tampere",
   574605:  "TKL bussi 1",
   2566357: "TKL bussi 28",
-  1502638: "Hatanpää"
 };
 
 var beerBlacklist = {
