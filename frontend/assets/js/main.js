@@ -10,6 +10,7 @@ var venueBlacklist = {
   1293012: "Tampere",
   574605:  "TKL bussi 1",
   2566357: "TKL bussi 28",
+  1502638: "Hatanpää"
 };
 
 var beerBlacklist = {
