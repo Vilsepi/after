@@ -3,33 +3,28 @@ var qs = require('querystring');
 var AWS = require('aws-sdk');
 var s3 = new AWS.S3();
 
-/*
-Calls Untappd API to get latest beer checkins in a specific geographical area
-and stores the response json to S3. Untappd API credentials are required for
-all requests.
-*/
-
 var config = {
   untappdClientId: '',
   untappdClientSecret: '',
   bucketName: ''
 };
 
-exports.handler = function(event, context) {
+var areas = {
+  'tampere':  {name: 'tampere',  lat: 61.4985, lng: 23.7717, radius: 1.06},
+  'helsinki': {name: 'helsinki', lat: 60.1671, lng: 24.9409, radius: 1.49},
+};
+var area = areas['tampere'];
 
-  var area = 'tampere';
-  var areas = {
-    'tampere':  {lat: 61.4985, lng: 23.7717, radius: 1.06},
-    'helsinki': {lat: 60.1671, lng: 24.9409, radius: 1.49},
-  };
+// Get latest beer checkins in a geographical area and store them to S3 as json.
+exports.handler = function(event, context) {
 
   var httpQueryParams = {
     client_id: config.untappdClientId,
-    client_secret: config.untappdClientSecret
+    client_secret: config.untappdClientSecret,
+    lat: area.lat,
+    lng: area.lng,
+    radius: area.radius
   };
-
-  /* Add geofencing parameters to query */
-  for (var attr in areas[area]) { httpQueryParams[attr] = areas[area][attr]; }
 
   var httpOptions = {
     host: 'api.untappd.com',
@@ -45,7 +40,7 @@ exports.handler = function(event, context) {
 
     var s3params = {
       'Bucket': config.bucketName,
-      'Key': 'data/thepub-' + area + '.json',
+      'Key': 'data/thepub-' + area.name + '.json',
       'ContentLength': res.headers['content-length'],
       'ContentType': 'application/json',
       'Body': res
@@ -57,7 +52,7 @@ exports.handler = function(event, context) {
         context.fail('Failed to upload data to S3');
       }
       else {
-        context.succeed('Successfully updated data');
+        context.succeed('Successfully updated data for area ' + area.name);
       }
     });
 
