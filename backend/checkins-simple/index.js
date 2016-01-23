@@ -4,20 +4,7 @@ var https = require('https');
 var qs = require('querystring');
 var AWS = require('aws-sdk');
 var s3 = new AWS.S3();
-
-var config = {
-  remoteClientId: '',
-  remoteClientSecret: '',
-  remoteHost: '',
-  remotePath: '',
-  bucketName: ''
-};
-
-var areas = {
-  tampere:  {name: 'tampere',  lat: 61.4985, lng: 23.7717, radius: 1.06},
-  helsinki: {name: 'helsinki', lat: 60.1671, lng: 24.9409, radius: 1.49},
-};
-var area = areas.tampere;
+var config = require('./config');
 
 // Get latest checkins in a geographical area and store them to S3 as json.
 exports.handler = function(event, context) {
@@ -25,9 +12,9 @@ exports.handler = function(event, context) {
   var httpQueryParams = {
     client_id: config.remoteClientId,
     client_secret: config.remoteClientSecret,
-    lat: area.lat,
-    lng: area.lng,
-    radius: area.radius
+    lat: config.area.lat,
+    lng: config.area.lng,
+    radius: config.area.radius
   };
 
   var httpOptions = {
@@ -44,7 +31,7 @@ exports.handler = function(event, context) {
 
     var s3params = {
       'Bucket': config.bucketName,
-      'Key': 'data/thepub-' + area.name + '.json',
+      'Key': 'data/thepub-' + config.area.name + '.json',
       'ContentLength': res.headers['content-length'],
       'ContentType': 'application/json',
       'Body': res
@@ -56,7 +43,7 @@ exports.handler = function(event, context) {
         context.fail('Failed to upload data to S3');
       }
       else {
-        context.succeed('Successfully updated data for area ' + area.name);
+        context.succeed('Successfully updated data for area ' + config.area.name);
       }
     });
 

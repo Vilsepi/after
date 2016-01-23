@@ -2,22 +2,10 @@
 
 var https = require('https');
 var qs = require('querystring');
+var _ = require('lodash');
 var doc = require('dynamodb-doc');
 var dynamo = new doc.DynamoDB();
-
-var config = {
-  remoteClientId: '',
-  remoteClientSecret: '',
-  remoteHost: '',
-  remotePath: '',
-  tableCheckin: ''
-};
-
-var areas = {
-  tampere:  {name: 'tampere',  lat: 61.4985, lng: 23.7717, radius: 1.06},
-  helsinki: {name: 'helsinki', lat: 60.1671, lng: 24.9409, radius: 1.49},
-};
-var area = areas.tampere;
+var config = require('./config');
 
 // Get latest checkins in a geographical area and store them to DynamoDB.
 exports.handler = function(event, context) {
@@ -58,9 +46,9 @@ exports.handler = function(event, context) {
   var httpQueryParams = {
     client_id: config.remoteClientId,
     client_secret: config.remoteClientSecret,
-    lat: area.lat,
-    lng: area.lng,
-    radius: area.radius
+    lat: config.area.lat,
+    lng: config.area.lng,
+    radius: config.area.radius
   };
 
   var httpOptions = {
