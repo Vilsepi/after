@@ -1,34 +1,38 @@
+"use strict";
+
 var https = require('https');
 var qs = require('querystring');
 var AWS = require('aws-sdk');
 var s3 = new AWS.S3();
 
 var config = {
-  untappdClientId: '',
-  untappdClientSecret: '',
+  remoteClientId: '',
+  remoteClientSecret: '',
+  remoteHost: '',
+  remotePath: '',
   bucketName: ''
 };
 
 var areas = {
-  'tampere':  {name: 'tampere',  lat: 61.4985, lng: 23.7717, radius: 1.06},
-  'helsinki': {name: 'helsinki', lat: 60.1671, lng: 24.9409, radius: 1.49},
+  tampere:  {name: 'tampere',  lat: 61.4985, lng: 23.7717, radius: 1.06},
+  helsinki: {name: 'helsinki', lat: 60.1671, lng: 24.9409, radius: 1.49},
 };
-var area = areas['tampere'];
+var area = areas.tampere;
 
-// Get latest beer checkins in a geographical area and store them to S3 as json.
+// Get latest checkins in a geographical area and store them to S3 as json.
 exports.handler = function(event, context) {
 
   var httpQueryParams = {
-    client_id: config.untappdClientId,
-    client_secret: config.untappdClientSecret,
+    client_id: config.remoteClientId,
+    client_secret: config.remoteClientSecret,
     lat: area.lat,
     lng: area.lng,
     radius: area.radius
   };
 
   var httpOptions = {
-    host: 'api.untappd.com',
-    path: '/v4/thepub/local' + '?' + qs.stringify(httpQueryParams)
+    host: config.remoteHost,
+    path: config.remotePath + '?' + qs.stringify(httpQueryParams)
   };
 
   https.get(httpOptions, function(res) {
