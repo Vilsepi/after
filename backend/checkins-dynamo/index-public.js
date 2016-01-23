@@ -10,9 +10,7 @@ var config = {
   remoteClientSecret: '',
   remoteHost: '',
   remotePath: '',
-  tableCheckin: '',
-  tableBeer: '',
-  tableVenue: ''
+  tableCheckin: ''
 };
 
 var areas = {
