@@ -22,8 +22,16 @@ exports.handler = function(event, context) {
 
   // Tries to batch write items until succeeds or lambda timeouts
   function determinedBatchWrite(dynamoParams, batchDoneCallback) {
+
+    if (dynamoParams.RequestItems) {
+      _.forOwn(dynamoParams.RequestItems, function(value, key) {
+        console.log("Batch of " + value.length + " items for table " + key);
+      });
+    }
+
     dynamo.batchWriteItem(dynamoParams, function(err, data) {
       if (err) {
+        console.log(err);
         context.fail(err);
       }
       else {
@@ -42,6 +50,7 @@ exports.handler = function(event, context) {
 
   // Split checkins into beers and venues and write them to dynamo
   function processCheckins(checkins) {
+    console.log("Processing items: " + checkins.length);
     deleteEmptyStrings(checkins);
 
     var beers = {};
@@ -80,8 +89,11 @@ exports.handler = function(event, context) {
     path: config.remotePath + '?' + qs.stringify(httpQueryParams)
   };
 
+  console.log('Calling remote');
   https.get(httpOptions, function(res) {
+    console.log('Receiving response');
     console.log('Remote server rate limit remaining: ', res.headers['x-ratelimit-remaining']);
+
     if (res.statusCode != 200) {
       console.log('Received non-ok status code from remote: ', res.statusCode);
       context.fail('Request to remote failed');
