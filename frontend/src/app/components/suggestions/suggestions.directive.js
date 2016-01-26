@@ -18,11 +18,10 @@
     return directive;
 
     /** @ngInject */
-    function SuggestionsController($timeout, $http) {
+    function SuggestionsController($timeout, $http, _) {
       var vm = this;
 
-
-      /*var venueBlacklist = {
+      var venueBlacklist = {
         547302:  "Ale Pupi",
         1379610: "Amica-ravintola Valtatie 30",
         1782433: "As Oy Sorsapuisto",
@@ -35,7 +34,7 @@
         574605:  "TKL bussi 1",
         2566357: "TKL bussi 28",
         /* Helsinki */
-        /*4215417: "Hernesaarenkatu",
+        4215417: "Hernesaarenkatu",
         482487:  "Kotiharjun sauna",
         1989714: "Maneesikatu"
       };
@@ -46,11 +45,10 @@
         77068:  "Koff III",
         36800:  "Lapin Kulta Premium III",
         925902: "Long Drink Grapefruit"
-      };*/
+      };
 
       var url = '/data/thepub-tampere.json';
-      /*
-      if (window.location.search.indexOf("Helsinki") >= 0) {
+      /*if (window.location.search.indexOf("Helsinki") >= 0) {
         var url = '/data/thepub-helsinki.json';
       }
       else {
@@ -60,19 +58,16 @@
       $http.get(url).then(function (response) {
 
         var checkins = response.data.response.checkins.items;
-        var filteredCheckins = checkins;
-        /*var filteredCheckins = _.reject(checkins, function(item) {
+        var filteredCheckins = _.reject(checkins, function(item) {
           return venueBlacklist[item.venue.venue_id] || beerBlacklist[item.beer.bid];
-        });*/
+        });
 
-        /* Y u no work with webpack?! */
-        /*var topSuggestions = _(filteredCheckins)
+        var topSuggestions = _(filteredCheckins)
           .uniqBy('venue.venue_id')
           .take(3)
           .sortBy('beer.beer_abv')
           .reverse()
-          .value();*/
-        var topSuggestions = filteredCheckins;
+          .value();
 
         vm.suggestions = topSuggestions;
         vm.checkins = filteredCheckins;
