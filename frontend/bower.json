@@ -1,0 +1,35 @@
+{
+  "name": "afterHeap",
+  "version": "0.3.0",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular-resource": "~1.4.2",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap-sass": "~3.3.5",
+    "angular-bootstrap": "~0.13.4",
+    "angular-toastr": "~1.5.0",
+    "moment": "~2.10.6",
+    "animate.css": "~3.4.0",
+    "angular": "~1.4.2",
+    "lodash": "4.0.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.2"
+  },
+  "overrides": {
+    "bootstrap-sass": {
+      "main": [
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/fonts/bootstrap/glyphicons-halflings-regular.eot",
+        "assets/fonts/bootstrap/glyphicons-halflings-regular.svg",
+        "assets/fonts/bootstrap/glyphicons-halflings-regular.ttf",
+        "assets/fonts/bootstrap/glyphicons-halflings-regular.woff",
+        "assets/fonts/bootstrap/glyphicons-halflings-regular.woff2"
+      ]
+    }
+  },
+  "resolutions": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.2"
+  }
+}

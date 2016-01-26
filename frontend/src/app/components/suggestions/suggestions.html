@@ -1,0 +1,43 @@
+<div class="row nav-row">
+
+  <!--<div class="small-12 medium-8 medium-offset-2 columns expanded button-group">-->
+  <div class="btn-group btn-block" role="group" aria-label="...">
+    <a href="?city=Tampere" class="btn btn-primary btn-lg">Tampere</a>
+    <a href="?city=Helsinki" class="btn btn-default btn-lg">Helsinki</a>
+  </div>
+</div>
+
+<!-- Primary beer suggestions -->
+<div ng-show="suggestions.suggestions == null" class="please-wait">Arvotaan afteripaikkaa, maltapa hetki...</div>
+<div id="beer-list">
+  <div class="row tip" ng-repeat="tip in suggestions.suggestions">
+    <div class="small-12 columns venue-tip">
+      <a href="{{ tip.venue.foursquare.foursquare_url }}" ng-bind="tip.venue.venue_name"></a>
+    </div>
+    <div class="small-12 columns beer-tip">
+      <a class="br beer-tip-name" title="{{ tip.brewery.brewery_name }}" href="{{ tip.brewery.contact.url }}" ng-bind="tip.beer.beer_name| limitTo:35"></a>
+      <i class="br beer-tip-details">
+        <span ng-bind="tip.beer.beer_abv + '%'"></span>
+        <span ng-bind="tip.beer.beer_style"></span>
+      </i>
+    </div>
+  </div>
+</div>
+
+
+<div class="row" ng-cloak>
+  <ul class="accordion" data-accordion data-allow-all-closed="true" role="tablist">
+    <!-- The Pub debug accordion -->
+    <li class="accordion-item">
+      <a href="#thePub" role="tab" class="accordion-title" id="thePub-heading" aria-controls="thePub">Lisää ehdotuksia</a>
+      <div id="thePub" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="thePub-heading">
+        <div class="checkin" ng-repeat="c in suggestions.checkins">
+        <b><a href="{{ c.venue.foursquare.foursquare_url }}">{{ c.venue.venue_name }}</a></b> <span class="uid">{{ c.venue.venue_id }}</span><br>
+        <span class="label" ng-repeat="category in c.venue.categories.items">{{ category.category_name}}</span><br>
+        <b>{{ c.beer.beer_name }}</b>, {{ c.beer.beer_abv }}% ({{ c.beer.beer_style }}, {{ c.brewery.brewery_name }}, {{ c.brewery.country_name }}) <span class="uid">{{ c.beer.bid }}</span><br>
+        {{ c.rating_score }}/5 <i>{{ c.checkin_comment }}</i> -{{ c.user.first_name }} {{ c.user.last_name }} ({{ c.user.user_name }})
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
