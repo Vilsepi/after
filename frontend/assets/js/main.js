@@ -34,7 +34,7 @@ angular.module('afteri', []).controller('afteriCtrl', ['$scope', '$http', functi
     url = '/data/thepub-tampere.json';
   }
 
-  $http.get(url).then(function (response) {
+  function processResponse(response) {
 
     var checkins = response.data.response.checkins.items;
     var filteredCheckins = _.reject(checkins, function(item) {
@@ -51,6 +51,8 @@ angular.module('afteri', []).controller('afteriCtrl', ['$scope', '$http', functi
     $scope.suggestions = topSuggestions;
     $scope.checkins = filteredCheckins;
 
-  });
+  }
+
+  $http.get(url).then(processResponse);
 
 }]);

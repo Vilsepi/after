@@ -31,7 +31,7 @@
   </div>
 
   <!-- Primary beer suggestions -->
-  <div ng-show="suggestions == null" class="please-wait">Arvotaan afteripaikkaa, maltapa hetki...</div>
+  <div ng-show="suggestions == null" class="please-wait">Arvotaan afteripaikkaa, maltapa hetki…</div>
   <div id="beer-list">
     <div class="row tip" ng-repeat="tip in suggestions">
       <div class="small-12 columns venue-tip">
@@ -47,7 +47,7 @@
     </div>
   </div>
 
-  
+
   <div class="row" ng-cloak>
     <ul class="accordion" data-accordion data-allow-all-closed="true" role="tablist">
       <!-- The Pub debug accordion -->
@@ -58,7 +58,7 @@
           <b><a href="{{ c.venue.foursquare.foursquare_url }}">{{ c.venue.venue_name }}</a></b> <span class="uid">{{ c.venue.venue_id }}</span><br>
           <span class="label" ng-repeat="category in c.venue.categories.items">{{ category.category_name}}</span><br>
           <b>{{ c.beer.beer_name }}</b>, {{ c.beer.beer_abv }}% ({{ c.beer.beer_style }}, {{ c.brewery.brewery_name }}, {{ c.brewery.country_name }}) <span class="uid">{{ c.beer.bid }}</span><br>
-          {{ c.rating_score }}/5 <i>{{ c.checkin_comment }}</i> -{{ c.user.first_name }} {{ c.user.last_name }} ({{ c.user.user_name }})
+          <span rating="c.rating_score"></span> <i>{{ c.checkin_comment }}</i> -{{ c.user.first_name }} {{ c.user.last_name }} ({{ c.user.user_name }})
           </div>
         </div>
       </li>
@@ -79,6 +79,7 @@
 <script src="assets/vendor/foundation-6.0.5.min.js"></script>
 <script src="assets/vendor/lodash-4.0.0.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/rating.js"></script>
 <script type="text/javascript">$(document).ready(function(){$(document).foundation();});</script>
 </body>
 </html>

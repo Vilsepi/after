@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
 /* Responsive line-break */
 .br { display: block; }
@@ -12,7 +13,7 @@
 
 body {
   background: #f0f0f4;
-  font-family: serif;
+  font-family: 'Lato', serif;
 }
 
 h1 {
@@ -130,4 +131,41 @@ a:active {
 }
 .footer a {
   color: #bbb;
+}
+
+/* Star rating */
+.stars-wrapper {
+  display: inline-block;
+}
+
+.star {
+  font-size: 24px;
+  width: 24px;
+  display: inline-block;
+  color: #bbb;
+}
+.star:last-child {
+  margin-right: 0;
+}
+.star:before {
+  content: '\2605';
+}
+.star.frac100 {
+  color: #2199e8;
+}
+.star.frac:after {
+  content: '\2605';
+  color: #2199e8;
+  position: absolute;
+  margin-left: -20px;
+  overflow: hidden;
+}
+.star.frac.frac5:after {
+  width: 11px;
+}
+.star.frac.frac25:after {
+  width: 8px;
+}
+.star.frac.frac75:after {
+  width: 14px;
 }
