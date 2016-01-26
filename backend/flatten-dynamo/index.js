@@ -73,7 +73,11 @@ exports.handler = function(event, context) {
     var beerParams = itemsToParams(beers, config.tableBeer);
     var venueParams = itemsToParams(venues, config.tableVenue);
 
-    determinedBatchWrite(beerParams, determinedBatchWrite(venueParams, context.succeed()));
+    determinedBatchWrite(beerParams, function() {
+      determinedBatchWrite(venueParams, function() {
+        context.succeed();
+      });
+    });
   }
 
   var httpQueryParams = {
@@ -89,9 +93,7 @@ exports.handler = function(event, context) {
     path: config.remotePath + '?' + qs.stringify(httpQueryParams)
   };
 
-  console.log('Calling remote');
   https.get(httpOptions, function(res) {
-    console.log('Receiving response');
     console.log('Remote server rate limit remaining: ', res.headers['x-ratelimit-remaining']);
 
     if (res.statusCode != 200) {
