@@ -11,6 +11,17 @@ Recommendations are currently provided from the following areas:
 
 Contributions are welcome, feel free to create issues and pull requests.
 
+**Please note:** While the `frontend-legacy` is the currently live version, it is actively being replaced by the newer `frontend` directory which has proper tooling and structure. Focus your efforts on the newer version.
+
+## Roadmap
+
+- Move blacklists and suggestion logic from frontend to backend
+- Instead of basing recommendations on randomly picked latest checkins, first pick bars and then fetch top-rated, recently drank beers there
+- Split recommendations and latest checkins ("nearby activity") into separate views
+- For recommended beers, show the global rating instead of the rating of a single person in the latest checkin
+- Filter recommended venues by category, instead of banning venues one-by-one
+- Add tests and Travis
+
 ## License and attribution
 
 Code is licensed MIT.
