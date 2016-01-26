@@ -5,6 +5,10 @@
 $navbar-inverse-link-color: #5AADBB;
 $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
+@import "assets/bootswatch/boxshadow_mixin.scss";
+@import "assets/bootswatch/flatly_bootswatch.scss";
+@import "assets/bootswatch/flatly_variables.scss";
+
 /**
  *  Do not remove the comments below. It's the markers used by wiredep to inject
  *  sass dependencies when defined in the bower.json of your dependencies
