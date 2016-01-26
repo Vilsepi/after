@@ -18,7 +18,7 @@
     return directive;
 
     /** @ngInject */
-    function SuggestionsController($timeout, $http, _) {
+    function SuggestionsController($window, $timeout, $http, _) {
       var vm = this;
 
       var venueBlacklist = {
@@ -48,12 +48,9 @@
       };
 
       var url = '/data/thepub-tampere.json';
-      /*if (window.location.search.indexOf("Helsinki") >= 0) {
-        var url = '/data/thepub-helsinki.json';
+      if ($window.location.search.indexOf("Helsinki") >= 0) {
+        url = '/data/thepub-helsinki.json';
       }
-      else {
-        var url = '/data/thepub-tampere.json';
-      }*/
 
       $http.get(url).then(function (response) {
 
