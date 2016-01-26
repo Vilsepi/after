@@ -1,9 +1,16 @@
 {
   "name": "afterHeap",
-  "version": "0.0.0",
+  "version": "0.3.0",
+  "license": "MIT",
+  "homepage": "https://github.com/Vilsepi/after",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vilsepi/after.git"
+  },
   "dependencies": {},
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "start": "gulp serve"
   },
   "devDependencies": {
     "estraverse": "~4.1.0",
