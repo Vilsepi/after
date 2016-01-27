@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('afterHeap', ['ngResource', 'ui.router', 'ui.bootstrap', 'toastr']);
+    .module('afterHeap', ['ngResource', 'ui.router', 'ui.bootstrap']);
 
 })();
