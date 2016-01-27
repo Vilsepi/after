@@ -23,6 +23,7 @@ var beerBlacklist = {
   77068:  "Koff III",
   36800:  "Lapin Kulta Premium III",
   925902: "Long Drink Grapefruit",
+  168826: "Stowford Press Low Alcohol",
 };
 
 angular.module('afteri', []).controller('afteriCtrl', ['$scope', '$http', function($scope, $http) {
