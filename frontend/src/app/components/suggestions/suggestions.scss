@@ -1,0 +1,119 @@
+
+h1 {
+  color: #383838;
+  margin-top: 30px;
+  font-size: 85px;
+  font-family: 'Lobster', serif;
+  text-align: center;
+}
+
+/* Untappd IDs, used to blacklist items */
+.uid {
+  font-size: 0.7em;
+  color: #ccc;
+}
+
+
+.please-wait {
+  text-align: center;
+  color: #666;
+  font-size: 30px;
+  font-style: italic;
+  margin-top: 30px;
+}
+
+
+/* Responsive line-break */
+.br { display: block; }
+@media screen and (min-width: 40.063em){
+  .br { display: inline; }
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.nav-row {
+  margin: 20px 0;
+}
+.button:visited {
+  color: #fff;
+}
+
+/* Mobile-optimized */
+@media screen and (max-width: 40em){
+  h1 {
+    margin: 5px 0 20px 0;
+    font-size: 45px;
+  }
+  .beer-tip-name {
+    font-size: 20px;
+  }
+
+  .beer-tip-details {
+    font-size: 16px;
+  }
+}
+
+/* Desktop-optimized */
+@media only screen and (min-width: 40.063em) {
+  .beer-tip-name {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+  .beer-tip-details {
+    font-size: 24px;
+  }
+}
+
+.venue-tip {
+  font-family: 'Lobster', serif;
+  font-size: 40px;
+  line-height: 0.9em;
+}
+
+.beer-tip {
+  color: #666;
+}
+
+.tip {
+  margin-bottom: 25px;
+}
+
+
+a {
+  color: #222;
+}
+a:visited {
+  color: #222;
+}
+a:hover {
+  color: #000;
+}
+a:active {
+  color: #000;
+}
+
+.checkin {
+  margin-bottom: 20px;
+}
+
+.accordion {
+  margin-top: 20px;
+  background: none;
+}
+
+.accordion-title {
+  font-size: 18px;
+  color: black;
+  background: none;
+}
+
+.accordion-title::before {
+  display: none;
+}
+
+.label {
+  margin-right: 3px;
+}

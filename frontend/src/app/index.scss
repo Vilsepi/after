@@ -5,9 +5,8 @@
 $navbar-inverse-link-color: #5AADBB;
 $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
-@import "assets/bootswatch/boxshadow_mixin.scss";
-@import "assets/bootswatch/flatly_variables.scss";
-@import "assets/bootswatch/flatly_bootswatch.scss";
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
 /**
  *  Do not remove the comments below. It's the markers used by wiredep to inject
@@ -37,3 +36,8 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
  */
 // injector
 // endinjector
+
+body {
+  background: #f6f6f6;
+  font-family: 'Lato', sans-serif;
+}
