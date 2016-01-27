@@ -136,19 +136,29 @@ a:active {
 /* Star rating */
 .stars-wrapper {
   display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: top;
 }
 
 .star {
-  font-size: 24px;
   width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 24px;
   display: inline-block;
   color: #bbb;
+  overflow: hidden;
+  position: relative;
 }
 .star:last-child {
   margin-right: 0;
 }
 .star:before {
   content: '\2605';
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .star.frac100 {
   color: #2199e8;
@@ -157,15 +167,16 @@ a:active {
   content: '\2605';
   color: #2199e8;
   position: absolute;
-  margin-left: -20px;
+  left: 0;
+  top: 0;
   overflow: hidden;
 }
 .star.frac.frac5:after {
-  width: 11px;
+  width: 10px;
 }
 .star.frac.frac25:after {
-  width: 8px;
+  width: 7px;
 }
 .star.frac.frac75:after {
-  width: 14px;
+  width: 13px;
 }

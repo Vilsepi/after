@@ -52,8 +52,7 @@
         url = '/data/thepub-helsinki.json';
       }
 
-      $http.get(url).then(function (response) {
-
+      function processResponse(response) {
         var checkins = response.data.response.checkins.items;
         var filteredCheckins = _.reject(checkins, function(item) {
           return venueBlacklist[item.venue.venue_id] || beerBlacklist[item.beer.bid];
@@ -68,9 +67,9 @@
 
         vm.suggestions = topSuggestions;
         vm.checkins = filteredCheckins;
+      }
 
-      });
-
+      $http.get(url).then(processResponse);
 
     }
   }
