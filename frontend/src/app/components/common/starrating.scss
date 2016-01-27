@@ -1,0 +1,54 @@
+$star-color: $brand-primary;
+$star-size: 22px;
+$star-char: '\2605';
+$star-empty-color: #bbb;
+
+.stars-wrapper {
+  display: inline-block;
+  height: $star-size;
+  line-height: $star-size;
+  vertical-align: top;
+  margin-top: -0.05 * $star-size;
+}
+
+.star {
+  width: $star-size;
+  height: $star-size;
+  line-height: $star-size;
+  font-size: $star-size;
+  display: inline-block;
+  color: $star-empty-color;
+  overflow: hidden;
+  position: relative;
+  &:last-child {
+    margin-right: 0;
+  }
+  &:before {
+    content: $star-char;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &.frac100 {
+    color: $star-color;
+  }
+  &.frac {
+    &:after {
+      content: $star-char;
+      color: $star-color;
+      position: absolute;
+      left: 0;
+      top: 0;
+      overflow: hidden;
+    }
+    &.frac25:after {
+      width: $star-size * 0.30;
+    }
+    &.frac5:after {
+      width: $star-size * 0.43;
+    }
+    &.frac75:after {
+      width: $star-size * 0.57;
+    }
+  }
+}
