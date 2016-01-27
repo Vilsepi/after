@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# This script packages and uploads the source code of a AWS Lambda function and
+# deploys it live. Requires AWS CLI tools and credentials configured.
 
 if [ -n "$2" ]
 then
