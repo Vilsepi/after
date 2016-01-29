@@ -24,6 +24,7 @@ Contributions are welcome, feel free to create issues and pull requests.
 - For recommended beers, show the global rating instead of the rating of a single person in the latest checkin
 - Move blacklists and suggestion logic from frontend to backend
 - Instead of basing recommendations on randomly picked latest checkins, first pick bars and then fetch top-rated, recently drank beers there
+- Remove Bower and use plain NPM instead
 - Add tests and Travis CI
 
 ## License and attribution
