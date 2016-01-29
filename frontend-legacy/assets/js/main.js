@@ -31,6 +31,9 @@ angular.module('afteri', []).controller('afteriCtrl', ['$scope', '$http', functi
   if (window.location.search.indexOf("Helsinki") >= 0) {
     url = '/data/thepub-helsinki.json';
   }
+  else if (window.location.search.indexOf("Hameenlinna") >= 0) {
+    url = '/data/thepub-hameenlinna.json';
+  }
   else {
     url = '/data/thepub-tampere.json';
   }
