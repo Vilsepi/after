@@ -33,6 +33,12 @@
         1293012: "Tampere",
         574605:  "TKL bussi 1",
         2566357: "TKL bussi 28",
+        /* Hämeenlinna */
+        1562999: "Hämeenlinna",
+        4258445: "Linna Style Oy",
+        4257589: "Mummola",
+        4130703: "Paavo Cajanderin katu 7",
+        4258044: "Tanian huussi",
         /* Helsinki */
         4215417: "Hernesaarenkatu",
         482487:  "Kotiharjun sauna",
