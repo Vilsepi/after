@@ -16,12 +16,15 @@ Contributions are welcome, feel free to create issues and pull requests.
 
 ## Roadmap
 
-- Move blacklists and suggestion logic from frontend to backend
-- Instead of basing recommendations on randomly picked latest checkins, first pick bars and then fetch top-rated, recently drank beers there
+- Fix Bootstrap-based frontend (migrated from Foundation)
+- Filter recommended venues by category (only show bars, pubs, restaurants), instead of banning venues one-by-one
+- Show no rating if rating is 0
+- Add navbar and scalable view routing
 - Split recommendations and latest checkins ("nearby activity") into separate views
 - For recommended beers, show the global rating instead of the rating of a single person in the latest checkin
-- Filter recommended venues by category, instead of banning venues one-by-one
-- Add tests and Travis
+- Move blacklists and suggestion logic from frontend to backend
+- Instead of basing recommendations on randomly picked latest checkins, first pick bars and then fetch top-rated, recently drank beers there
+- Add tests and Travis CI
 
 ## License and attribution
 
