@@ -8,14 +8,18 @@
 <div id="beer-list">
   <div class="row tip" ng-repeat="tip in highlights.data">
     <div class="col-xs-12 venue-tip">
-      <a href="{{ tip.venue.foursquare.foursquare_url }}" ng-bind="tip.venue.venue_name"></a>
+      <a href="{{ tip[0].venue.foursquare.foursquare_url }}" ng-bind="tip[0].venue.venue_name"></a>
     </div>
     <div class="col-xs-12 beer-tip">
-      <a class="br beer-tip-name" title="{{ tip.brewery.brewery_name }}" href="{{ tip.brewery.contact.url }}" ng-bind="tip.beer.beer_name| limitTo:35"></a>
+      <a class="br beer-tip-name" title="{{ tip[0].brewery.brewery_name }}" href="{{ tip[0].brewery.contact.url }}" ng-bind="tip.beer.beer_name| limitTo:35"></a>
       <i class="br beer-tip-details">
-        <span ng-bind="tip.beer.beer_abv + '%'"></span>
-        <span ng-bind="tip.beer.beer_style"></span>
+        <span ng-bind="tip[0].beer.beer_abv + '%'"></span>
+        <span ng-bind="tip[0].beer.beer_style"></span>
       </i>
+    </div>
+    <div class="col-xs-12 beer-tip">
+      <span class="br beer-tip-trip">Matka: </span>
+      <span class="br beer-tip-trip" ng-bind="tip[1].data.rows[0].elements[0].distance.text"></span>
     </div>
   </div>
 </div>

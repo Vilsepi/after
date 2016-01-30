@@ -6,19 +6,10 @@
     .controller('HighlightsController', HighlightsController);
 
 /** @ngInject */
-    function HighlightsController($log, $geolocation, highlights) {
+    function HighlightsController(highlights, distances, _) {
       var vm = this;
-      vm.data = highlights;
+      vm.data = _.zip(highlights, distances);
 
-      $geolocation.watchPosition({
-        timeout: 60000,
-        maximumAge: 250,
-        enableHighAccuracy: true
-      });
-
-      vm.myCoords = $geolocation.position.coords;
-      vm.myError = $geolocation.position.error;
-      $log.info(vm.myCoords, vm.highlights)
     }
 
 })();
