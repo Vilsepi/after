@@ -12,7 +12,7 @@ then
   cd $1
   zip -FSr ../build/$1.zip .
   cd ..
-  aws lambda update-function-code --function-name $2 --zip-file fileb://build/$1.zip
+  aws lambda update-function-code --profile afterheap --region eu-west-1 --function-name $2 --zip-file fileb://build/$1.zip
 else
 	echo "Usage: ./update.sh checkins-dynamo myLambdaFunctionInAWS"
 fi

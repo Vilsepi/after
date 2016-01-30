@@ -4,4 +4,4 @@
 # console. Requires AWS CLI tools and credentials configured.
 
 # Usage: ./invoke.sh myAWSLambdaFunctionName
-aws lambda invoke --function-name $1 /dev/stdout
+aws lambda invoke --profile afterheap --region eu-west-1 --function-name $1 /dev/stdout
