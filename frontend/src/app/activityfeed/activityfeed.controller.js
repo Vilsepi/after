@@ -6,8 +6,9 @@
     .controller('ActivityFeedController', ActivityFeedController);
 
   /** @ngInject */
-  function ActivityFeedController() {
-    //var vm = this;
+  function ActivityFeedController(checkins) {
+      var vm = this;
+      vm.data = checkins;
   }
 
 })();
