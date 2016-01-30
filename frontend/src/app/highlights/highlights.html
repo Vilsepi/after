@@ -2,10 +2,11 @@
   <h1>Päivän afteri</h1>
 </div>
 
+<pre>{{myCoords | json}}</pre>
+
 <!-- Primary beer suggestions -->
 <div class="row">
 <div ng-show="suggestions.suggestions == null" class="please-wait">Arvotaan afteripaikkaa, maltapa hetki…</div>
-
 <div id="beer-list">
   <div class="row tip" ng-repeat="tip in suggestions.suggestions">
     <div class="col-xs-12 venue-tip">

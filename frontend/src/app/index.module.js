@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('afterHeap', ['ngResource', 'ui.router', 'ui.bootstrap']);
+    .module('afterHeap', ['ngResource', 'ui.router', 'ui.bootstrap', 'ngGeolocation']);
 
 })();
