@@ -12,10 +12,12 @@
         url: '/',
         templateUrl: 'app/highlights/highlights.html',
         controller: 'HighlightsController',
-        controllerAs: 'suggestions',
+        controllerAs: 'highlights',
         resolve: {
-          data: function(api){
-            return api;
+          highlights: function(api, processResponse, $log){
+            return api.then(function(res) {
+              return processResponse.createTopSuggestions(res);
+            });
           }
         }
       })
@@ -23,10 +25,12 @@
         url: '/feed',
         templateUrl: 'app/activityfeed/activityfeed.html',
         controller: 'ActivityFeedController',
-        controllerAs: 'suggestions',
+        controllerAs: 'activityFeed',
         resolve: {
-          data: function(api){
-            return api;
+          checkins: function(api, processResponse, $log){
+            return api.then(function(res){
+              return processResponse.removeBlackListed(res);
+            });
           }
         }
       });

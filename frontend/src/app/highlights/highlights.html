@@ -2,13 +2,11 @@
   <h1>Päivän afteri</h1>
 </div>
 
-<pre>{{data | json}}</pre>
-
 <!-- Primary beer suggestions -->
 <div class="row">
-<div ng-show="suggestions.suggestions == null" class="please-wait">Arvotaan afteripaikkaa, maltapa hetki…</div>
+<div ng-show="highlights.data == null" class="please-wait">Arvotaan afteripaikkaa, maltapa hetki…</div>
 <div id="beer-list">
-  <div class="row tip" ng-repeat="tip in suggestions.suggestions">
+  <div class="row tip" ng-repeat="tip in highlights.data">
     <div class="col-xs-12 venue-tip">
       <a href="{{ tip.venue.foursquare.foursquare_url }}" ng-bind="tip.venue.venue_name"></a>
     </div>
