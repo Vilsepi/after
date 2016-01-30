@@ -3,25 +3,23 @@
 
   angular
     .module('afterHeap')
-    .service('geolocationService', geolocationService);
+    .service('distanceService', distanceService);
 
   /** @ngInject */
-  function geolocationService($geolocation) {
+  function distanceService($http) {
 
-    this.location = $geolocation.getCurrentPosition().then(function (location) {
-      return location;
-    });
+    var DISTANCE_API_URL = 'https://maps.googleapis.com/maps/api/distancematrix/json?';
+    var apiKey = 'AIzaSyCPjWmScJTDZMxu9_u49lABIIk52zZLDcQ';
 
-    this.watchPosition = function(interval){
-      return $geolocation.watchPosition({
-        timeout: interval || 60000,
-        maximumAge: 2,
-        enableHighAccuracy: true
-      });
+    var fetchDistance = function (startLat, startLng, destLat, destLng) {
+      var url = '' + DISTANCE_API_URL + 'origins=' + startLat + ","
+        + startLng + "&destinations=" + destLat + "," + destLng + "&key=" + apiKey;
+      return $http.get(url)
     };
 
-    this.coords = $geolocation.position.coords;
-    this.error = $geolocation.position.error;
+    return {
+      measure: fetchDistance
+    }
   }
 
 })();

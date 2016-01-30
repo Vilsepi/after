@@ -53,6 +53,9 @@ h1 {
   .beer-tip-details {
     font-size: 16px;
   }
+  .beer-tip-trip {
+    font-size: 12px;
+  }
 }
 
 /* Desktop-optimized */
@@ -64,6 +67,11 @@ h1 {
 
   .beer-tip-details {
     font-size: 24px;
+  }
+
+  .beer-tip-trip {
+    font-size: 18px;
+    margin-left: 15px;
   }
 }
 
