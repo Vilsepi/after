@@ -7,7 +7,9 @@
     "type": "git",
     "url": "https://github.com/Vilsepi/after.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.1.0"
+  },
   "scripts": {
     "test": "gulp test",
     "start": "gulp serve"

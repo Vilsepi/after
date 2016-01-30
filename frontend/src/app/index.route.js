@@ -12,7 +12,13 @@
         url: '/',
         templateUrl: 'app/highlights/highlights.html',
         controller: 'HighlightsController',
-        controllerAs: 'suggestions'
+        controllerAs: 'suggestions',
+        resolve: {
+          data: function(api){
+            console.log(api);
+            return api;
+          }
+        }
       })
       .state('activityfeed', {
         url: '/feed',
