@@ -16,11 +16,13 @@ Contributions are welcome, feel free to create issues and pull requests.
 
 ## Roadmap
 
-- Fix Bootstrap-based frontend (migrated from Foundation)
+- :heavy_check_mark: Fix Bootstrap-based frontend (migrated from Foundation)
+- :heavy_check_mark: Add navbar and scalable view routing
+- :heavy_check_mark: Split recommendations and latest checkins ("nearby activity") into separate views
+- Show distance to venue from user's current location
 - Filter recommended venues by category (only show bars, pubs, restaurants), instead of banning venues one-by-one
-- Show no rating if rating is 0
-- Add navbar and scalable view routing
-- Split recommendations and latest checkins ("nearby activity") into separate views
+- Show a treasure map of the night for brave adventurers
+- Show no rating if beer rating is 0
 - For recommended beers, show the global rating instead of the rating of a single person in the latest checkin
 - Move blacklists and suggestion logic from frontend to backend
 - Instead of basing recommendations on randomly picked latest checkins, first pick bars and then fetch top-rated, recently drank beers there
