@@ -1,26 +1,13 @@
 <!-- Latest checkins accordion -->
 <div class="row" ng-cloak>
-Activity Feed
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="thePub-heading">
-      <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          Lisää ehdotuksia
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="thePub-heading">
-      <div class="panel-body">
-        <div class="checkin" ng-repeat="c in suggestions.checkins">
-        <b><a href="{{ c.venue.foursquare.foursquare_url }}">{{ c.venue.venue_name }}</a></b> <span class="uid">{{ c.venue.venue_id }}</span><br>
-        <span class="label label-primary" ng-repeat="category in c.venue.categories.items">{{ category.category_name}}</span><br>
-        <b>{{ c.beer.beer_name }}</b>, {{ c.beer.beer_abv }}% ({{ c.beer.beer_style }}, {{ c.brewery.brewery_name }}, {{ c.brewery.country_name }}) <span class="uid">{{ c.beer.bid }}</span><br>
-        <span star-rating="c.rating_score"></span> <i>{{ c.checkin_comment }}</i> -{{ c.user.first_name }} {{ c.user.last_name }} ({{ c.user.user_name }})
-        </div>
-      </div>
-    </div>
-  </div>
+
+<h3>Viimeisimmät tapahtumat</h3>
+
+<div class="checkin" ng-repeat="c in suggestions.checkins">
+<b><a href="{{ c.venue.foursquare.foursquare_url }}">{{ c.venue.venue_name }}</a></b> <span class="uid">{{ c.venue.venue_id }}</span><br>
+<span class="label label-primary" ng-repeat="category in c.venue.categories.items">{{ category.category_name}}</span><br>
+<b>{{ c.beer.beer_name }}</b>, {{ c.beer.beer_abv }}% ({{ c.beer.beer_style }}, {{ c.brewery.brewery_name }}, {{ c.brewery.country_name }}) <span class="uid">{{ c.beer.bid }}</span><br>
+<span star-rating="c.rating_score"></span> <i>{{ c.checkin_comment }}</i> -{{ c.user.first_name }} {{ c.user.last_name }} ({{ c.user.user_name }})
 </div>
 
 </div>
