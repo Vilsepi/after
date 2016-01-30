@@ -18,7 +18,7 @@
 
       vm.myCoords = $geolocation.position.coords;
       vm.myError = $geolocation.position.error;
-      $log.info(vm.myError, vm.myCoords)
-  }
+      $log.info(vm.myError, vm.myCoords, vm.data.response)
+    }
 
 })();
