@@ -1,6 +1,6 @@
 # [After.heap.fi](http://after.heap.fi/)
 
-A simple web app that suggests beers and bars for afterwork.
+A simple web app that recommends beers and bars for afterwork.
 
 Recommendations are currently provided from the following areas:
 
@@ -10,7 +10,7 @@ Recommendations are currently provided from the following areas:
 
 ## Contributing
 
-Contributions are welcome, feel free to create issues and pull requests.
+Code contributions and issue reports are welcome. For code contributions: fork, clone, commit, push, send pull request.
 
 **Please note:** While the `frontend-legacy` is the currently live version, it is actively being replaced by the newer `frontend` directory which has proper tooling and structure. Focus your efforts on the newer version.
 
@@ -34,3 +34,5 @@ Contributions are welcome, feel free to create issues and pull requests.
 Code is licensed MIT.
 
 Data is provided by [Untappd](https://untappd.com/) API.
+
+Inspired by [wherethefuckshouldigofordrinks.com](http://wtfsigfd.com/).
