@@ -8,12 +8,19 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
+      .state('highlights', {
         url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      });
+        templateUrl: 'app/highlights/highlights.html',
+        controller: 'HighlightsController',
+        controllerAs: 'suggestions'
+      })
+      .state('activityfeed', {
+        url: '/feed',
+        templateUrl: 'app/activityfeed/activityfeed.html',
+        controller: 'ActivityFeedController',
+        controllerAs: 'suggestions'
+      })
+      ;
 
     $urlRouterProvider.otherwise('/');
   }

@@ -3,10 +3,11 @@
 
   angular
     .module('afterHeap')
-    .controller('MainController', MainController);
+    .controller('ActivityFeedController', ActivityFeedController);
 
   /** @ngInject */
-  function MainController() {
+  function ActivityFeedController() {
     //var vm = this;
   }
+
 })();

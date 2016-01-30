@@ -3,21 +3,9 @@
 
   angular
     .module('afterHeap')
-    .directive('afterHighlights', afterHighlights);
+    .controller('HighlightsController', HighlightsController);
 
-  /** @ngInject */
-  function afterHighlights() {
-    var directive = {
-      restrict: 'E',
-      templateUrl: 'app/components/highlights/highlights.html',
-      controller: HighlightsController,
-      controllerAs: 'highlights',
-      bindToController: true
-    };
-
-    return directive;
-
-    /** @ngInject */
+/** @ngInject */
     function HighlightsController($window, $timeout, $http, _) {
       var vm = this;
 
@@ -78,6 +66,5 @@
       $http.get(url).then(processResponse);
 
     }
-  }
 
 })();
