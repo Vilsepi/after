@@ -15,7 +15,6 @@
         controllerAs: 'suggestions',
         resolve: {
           data: function(api){
-            console.log(api);
             return api;
           }
         }
@@ -24,9 +23,13 @@
         url: '/feed',
         templateUrl: 'app/activityfeed/activityfeed.html',
         controller: 'ActivityFeedController',
-        controllerAs: 'suggestions'
-      })
-      ;
+        controllerAs: 'suggestions',
+        resolve: {
+          data: function(api){
+            return api;
+          }
+        }
+      });
 
     $urlRouterProvider.otherwise('/');
   }
