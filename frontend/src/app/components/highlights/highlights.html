@@ -1,0 +1,23 @@
+<div class="row">
+  <h1>Päivän afteri</h1>
+</div>
+
+<!-- Primary beer suggestions -->
+<div class="row">
+<div ng-show="suggestions.suggestions == null" class="please-wait">Arvotaan afteripaikkaa, maltapa hetki…</div>
+
+<div id="beer-list">
+  <div class="row tip" ng-repeat="tip in suggestions.suggestions">
+    <div class="col-xs-12 venue-tip">
+      <a href="{{ tip.venue.foursquare.foursquare_url }}" ng-bind="tip.venue.venue_name"></a>
+    </div>
+    <div class="col-xs-12 beer-tip">
+      <a class="br beer-tip-name" title="{{ tip.brewery.brewery_name }}" href="{{ tip.brewery.contact.url }}" ng-bind="tip.beer.beer_name| limitTo:35"></a>
+      <i class="br beer-tip-details">
+        <span ng-bind="tip.beer.beer_abv + '%'"></span>
+        <span ng-bind="tip.beer.beer_style"></span>
+      </i>
+    </div>
+  </div>
+</div>
+</div>

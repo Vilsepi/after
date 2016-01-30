@@ -3,22 +3,22 @@
 
   angular
     .module('afterHeap')
-    .directive('afterSuggestions', afterSuggestions);
+    .directive('afterHighlights', afterHighlights);
 
   /** @ngInject */
-  function afterSuggestions() {
+  function afterHighlights() {
     var directive = {
       restrict: 'E',
-      templateUrl: 'app/components/suggestions/suggestions.html',
-      controller: SuggestionsController,
-      controllerAs: 'suggestions',
+      templateUrl: 'app/components/highlights/highlights.html',
+      controller: HighlightsController,
+      controllerAs: 'highlights',
       bindToController: true
     };
 
     return directive;
 
     /** @ngInject */
-    function SuggestionsController($window, $timeout, $http, _) {
+    function HighlightsController($window, $timeout, $http, _) {
       var vm = this;
 
       var venueBlacklist = {
