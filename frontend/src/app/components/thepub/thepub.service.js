@@ -2,8 +2,8 @@
   'use strict';
   angular
     .module('afterHeap')
-    .service('api', function ($http, $log, processResponse) {
-      return $http.get('/data/thepub-tampere.json').then(processResponse);
+    .service('api', function ($http) {
+      return $http.get('/data/thepub-tampere.json')
     })
     .service('processResponse', function(_){
 
@@ -39,24 +39,25 @@
         925902: "Long Drink Grapefruit"
       };
 
-      function processResponse(response) {
+      function removeBlackListed(response){
         var checkins = response.data.response.checkins.items;
-        var filteredCheckins = _.reject(checkins, function (item) {
+        return _.reject(checkins, function (item) {
           return venueBlacklist[item.venue.venue_id] || beerBlacklist[item.beer.bid];
         });
+      }
 
-        var topSuggestions = _(filteredCheckins)
+      function createTopSuggestions(response) {
+        return _(removeBlackListed(response))
           .uniqBy('venue.venue_id')
           .take(3)
           .sortBy('beer.beer_abv')
           .reverse()
           .value();
-
-        return topSuggestions;
       }
 
       return {
-        processResponse: processResponse
+        removeBlackListed: removeBlackListed,
+        createTopSuggestions: createTopSuggestions
       }
     })
 

@@ -25,8 +25,8 @@
       </form>
 
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#/">Minne mennään?</a></li>
-        <li><a href="#/feed">Mitä tapahtuu?</a></li>
+        <li ng-class="{active: state.includes('highlights')}"><a ui-sref="highlights">Minne mennään?</a></li>
+        <li ng-class="{active: state.includes('activityfeed')}"><a ui-sref="activityfeed">Mitä tapahtuu?</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
