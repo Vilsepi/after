@@ -1,10 +1,12 @@
 
 h1 {
-  color: #383838;
+  color: #e5cea8;
   margin-top: 30px;
   font-size: 85px;
-  font-family: 'Lobster', serif;
+  font-family: 'Raleway', serif;
   text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
 }
 
 /* Untappd IDs, used to blacklist items */
@@ -13,6 +15,10 @@ h1 {
   color: #ccc;
 }
 
+.banner {
+  background: #2a395e;
+  padding-bottom: 20px;
+}
 
 .please-wait {
   text-align: center;
@@ -68,7 +74,7 @@ h1 {
 }
 
 .venue-tip {
-  font-family: 'Lobster', serif;
+  font-family: 'Raleway', serif;
   font-size: 40px;
   line-height: 0.9em;
 }

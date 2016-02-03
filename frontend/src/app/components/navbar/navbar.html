@@ -1,47 +1,36 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">After</a>
+<div class="row banner">
+<h1>Päivän <img src="assets/pa_logo.svg" class="logo"> afteri</h1>
+
+
+<div class="col-lg-4 col-lg-offset-4">
+
+<div class="line"></div>
+
+  <div class="automargin">
+
+    <!-- City buttons -->
+    <div class="btn-group btn-group-lg" role="group" aria-label="...">
+      <button type="button" class="btn btn-default">Tampere</button>
+      <button type="button" class="btn btn-default">Helsinki</button>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <!-- Mode buttons -->
+    <div class="btn-group btn-group-lg" role="group" aria-label="...">
+      <button type="button" class="btn btn-default">
+        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="btn btn-default">
+        <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="btn btn-default">
+        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+      </button>
+    </div>
 
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <select class="nav form-control">
-            <option>Tampere</option>
-            <option>Helsinki</option>
-            <option>Hämeenlinna</option>
-          </select>
-        </div>
-      </form>
+  </div>
 
-      <ul class="nav navbar-nav">
-        <li ng-class="{active: state.includes('highlights')}"><a ui-sref="highlights">Päivän afteri</a></li>
-        <li ng-class="{active: state.includes('activityfeed')}"><a ui-sref="activityfeed">Juuri nyt</a></li>
-      </ul>
+</div>
 
-      <!--<ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>-->
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+
+
+</div>

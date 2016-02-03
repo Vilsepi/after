@@ -1,0 +1,31 @@
+
+$heroBackgroundColor: #e5cea8;
+
+.navbar {
+  margin-bottom: 30px;
+}
+
+.automargin {
+  text-align: center;
+}
+
+h1 {
+  margin: 0.8em 0 0.2em 0;
+}
+
+.logo {
+  height: 1.6em;
+  margin-top: -0.2em;
+}
+
+.btn-default {
+  background: none;
+  color: $heroBackgroundColor;
+  border-color: $heroBackgroundColor;
+}
+
+.line {
+  height: 3px;
+  background: $heroBackgroundColor;
+  margin-bottom: 30px;
+}

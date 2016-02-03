@@ -1,7 +1,7 @@
 <!-- Latest checkins accordion -->
-<div class="row" ng-cloak>
+<div class="row activityfeed" ng-cloak>
 
-  <div class="checkin" ng-repeat="c in activityFeed.data">
+  <div class="col-lg-6 col-lg-offset-3 checkin" ng-repeat="c in activityFeed.data">
   <b><a href="{{ c.venue.foursquare.foursquare_url }}">{{ c.venue.venue_name }}</a></b> <span class="uid">{{ c.venue.venue_id }}</span><br>
   <span class="label label-primary" ng-repeat="category in c.venue.categories.items">{{ category.category_name}}</span><br>
   <b>{{ c.beer.beer_name }}</b>, {{ c.beer.beer_abv }}% ({{ c.beer.beer_style }}, {{ c.brewery.brewery_name }}, {{ c.brewery.country_name }}) <span class="uid">{{ c.beer.bid }}</span><br>

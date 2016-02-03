@@ -5,8 +5,7 @@
 $navbar-inverse-link-color: #5AADBB;
 $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
-@import url(https://fonts.googleapis.com/css?family=Lobster);
-@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,500,600,700,900);
 
 /**
  *  Do not remove the comments below. It's the markers used by wiredep to inject
@@ -39,5 +38,9 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 
 body {
   background: #f6f6f6;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway', sans-serif;
+}
+
+.mainviewcontainer {
+  margin: 50px;
 }
