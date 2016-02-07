@@ -8,8 +8,9 @@
 
     <!-- City buttons -->
     <div class="btn-group btn-group-lg" role="group" aria-label="...">
-      <button type="button" class="btn btn-default" ui-sref-active="active" ui-sref="city.highlights({cityId: 'Tampere'})">Tampere</button>
-      <button type="button" class="btn btn-default" ui-sref-active="active" ui-sref="city.highlights({cityId: 'Helsinki'})">Helsinki</button>
+
+      <button type="button" class="btn btn-default {{vm.stateParams.cityId == 'Tampere' ? 'active' : ''}}" ui-sref="city.highlights({cityId: 'Tampere'})">Tampere</button>
+      <button type="button" class="btn btn-default {{vm.stateParams.cityId == 'Helsinki' ? 'active' : ''}}" ui-sref="city.highlights({cityId: 'Helsinki'})">Helsinki</button>
     </div>
 
     <!-- Mode buttons -->
