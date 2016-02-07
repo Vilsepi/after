@@ -8,16 +8,16 @@
 
     <!-- City buttons -->
     <div class="btn-group btn-group-lg" role="group" aria-label="...">
-      <button type="button" class="btn btn-default">Tampere</button>
-      <button type="button" class="btn btn-default">Helsinki</button>
+      <button type="button" class="btn btn-default" ui-sref-active="active" ui-sref="city.highlights({cityId: 'Tampere'})">Tampere</button>
+      <button type="button" class="btn btn-default" ui-sref-active="active" ui-sref="city.highlights({cityId: 'Helsinki'})">Helsinki</button>
     </div>
 
     <!-- Mode buttons -->
     <div class="btn-group btn-group-lg" role="group" aria-label="...">
-      <button type="button" ui-sref-active="active" class="btn btn-default" ui-sref="highlights">
+      <button type="button" class="btn btn-default" ui-sref-active="active" ui-sref="city.highlights">
         <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
       </button>
-      <button type="button" ui-sref-active="active" class="btn btn-default" ui-sref="feed">
+      <button type="button" class="btn btn-default" ui-sref-active="active" ui-sref="city.feed">
         <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
       </button>
       <!--<button type="button" class="btn btn-danger">

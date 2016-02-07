@@ -2,8 +2,21 @@
   'use strict';
   angular
     .module('afterHeap')
-    .service('api', function ($http) {
-      return $http.get('/data/thepub-tampere.json')
+    .service('api', function ($http, $log) {
+
+      function getCityFeed(cityId) {
+        var city = cityId.toLowerCase();
+
+        if (city == 'tampere' || city == 'helsinki') {
+          return $http.get('/data/thepub-' + city + '.json');
+        }
+        $log.error("City " + city + " not supported");
+        return {};
+      }
+      return {
+        getCityFeed: getCityFeed
+      }
+
     })
     .service('processResponse', function(_){
 

@@ -8,38 +8,39 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('root', {
-        url: '/',
-        template: '<h1>Root state</h1>'
+      .state('city', {
+        abstract: true,
+        url: '/:cityId',
+        template: '<ui-view/>'
       })
-      .state('highlights', {
-        url: '/highlights',
+      .state('city.highlights', {
+        url: '/',
         templateUrl: 'app/highlights/highlights.html',
         controller: 'HighlightsController',
         controllerAs: 'highlightsController',
         resolve: {
-          highlights: function(api, processResponse){
-            return api.then(function(res) {
+          highlights: function(api, processResponse, $stateParams){
+            return api.getCityFeed($stateParams.cityId).then(function(res) {
               return processResponse.createTopSuggestions(res);
             })
           }
         }
       })
-      .state('feed', {
+      .state('city.feed', {
         url: '/feed',
         templateUrl: 'app/activityfeed/activityfeed.html',
         controller: 'ActivityFeedController',
         controllerAs: 'activityFeed',
         resolve: {
-          checkins: function(api, processResponse){
-            return api.then(function(res){
+          checkins: function(api, processResponse, $stateParams){
+            return api.getCityFeed($stateParams.cityId).then(function(res){
               return processResponse.removeBlackListed(res);
             });
           }
         }
       });
 
-    $urlRouterProvider.otherwise('/highlights');
+    $urlRouterProvider.otherwise('/Tampere/');
   }
 
 })();
