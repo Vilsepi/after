@@ -5,8 +5,8 @@
 
   <div class="row tip" ng-repeat="tip in highlightsController.highlights">
 
-    <div class="col-xs-12 venue-tip">
-      <a href="{{ tip.venue.foursquare.foursquare_url }}" ng-bind="tip.venue.venue_name"></a>
+    <div class="col-xs-12">
+      <a class="venue-tip" href="{{ tip.venue.foursquare.foursquare_url }}" ng-bind="tip.venue.venue_name"></a>
       <walking-distance venuelocation="tip.venue.location"></walking-distance>
     </div>
 

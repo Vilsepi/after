@@ -1,25 +1,4 @@
 
-h1 {
-  color: #e5cea8;
-  margin-top: 30px;
-  font-size: 85px;
-  font-family: 'Raleway', serif;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 300;
-}
-
-/* Untappd IDs, used to blacklist items */
-.uid {
-  font-size: 0.7em;
-  color: #ccc;
-}
-
-.banner {
-  background: #2a395e;
-  padding-bottom: 20px;
-}
-
 .please-wait {
   text-align: center;
   color: #666;
@@ -27,7 +6,6 @@ h1 {
   font-style: italic;
   margin-top: 30px;
 }
-
 
 /* Responsive line-break */
 .br { display: block; }
@@ -37,13 +15,6 @@ h1 {
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
-}
-
-.nav-row {
-  margin: 20px 0;
-}
-.button:visited {
-  color: #fff;
 }
 
 /* Mobile-optimized */
@@ -100,8 +71,4 @@ a:hover {
 }
 a:active {
   color: #000;
-}
-
-.checkin {
-  margin-bottom: 20px;
 }

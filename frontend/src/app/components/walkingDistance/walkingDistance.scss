@@ -1,5 +1,18 @@
 .walkingdistance {
   color: #22B573;
   height: 1.6em;
-  font-size: 20px;
+  font-size: 22px;
+  margin-left: 35px;
+  display: inline;
+}
+
+.walkingdistance:before {
+  content: '';
+  height: 1.6em;
+  width: 1.6em;
+  position: absolute;
+  margin-left: -30px;
+  margin-top: 6px;
+  background-image: url(/assets/walking_man.svg);
+  background-repeat: no-repeat;
 }

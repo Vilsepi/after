@@ -1,5 +1,6 @@
 
-$heroBackgroundColor: #e5cea8;
+$heroBackgroundColor: #2a395e;
+$heroForegroundColor: #e5cea8;
 
 .navbar {
   margin-bottom: 30px;
@@ -10,7 +11,13 @@ $heroBackgroundColor: #e5cea8;
 }
 
 h1 {
-  margin: 0.8em 0 0.2em 0;
+  color: #e5cea8;
+  margin: 50px 0 0.2em 0;
+  font-size: 85px;
+  font-family: 'Raleway', serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
 }
 
 .logo {
@@ -20,12 +27,30 @@ h1 {
 
 .btn-default {
   background: none;
-  color: $heroBackgroundColor;
-  border-color: $heroBackgroundColor;
+  color: $heroForegroundColor;
+  border-color: $heroForegroundColor;
 }
 
+.btn-default.active {
+  background-color: $heroForegroundColor;
+  color: $heroBackgroundColor;
+  border-color: $heroForegroundColor;
+}
+
+.btn:hover {
+  background-color: $heroBackgroundColor;
+  color: #fff;
+  border-color: #fff;
+}
+
+
 .line {
-  height: 3px;
-  background: $heroBackgroundColor;
+  height: 2px;
+  background: $heroForegroundColor;
   margin-bottom: 30px;
+}
+
+.banner {
+  background: $heroBackgroundColor;
+  padding-bottom: 20px;
 }

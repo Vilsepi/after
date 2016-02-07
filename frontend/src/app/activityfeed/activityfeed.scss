@@ -5,5 +5,12 @@
 
 .checkin {
   padding: 10px;
+  margin-bottom: 5px;
   border: 1px solid #ddd;
+}
+
+/* Untappd IDs, used to blacklist items */
+.uid {
+  font-size: 0.7em;
+  color: #ccc;
 }
