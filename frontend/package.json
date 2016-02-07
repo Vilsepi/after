@@ -7,9 +7,6 @@
     "type": "git",
     "url": "https://github.com/Vilsepi/after.git"
   },
-  "dependencies": {
-    "lodash": "^4.1.0"
-  },
   "scripts": {
     "test": "gulp test",
     "start": "gulp serve"
@@ -43,6 +40,7 @@
     "gulp-angular-filesort": "~1.1.1",
     "main-bower-files": "~2.9.0",
     "wiredep": "~2.2.2",
+    "lodash": "~3.9.0",
     "karma": "~0.13.10",
     "karma-jasmine": "~0.3.6",
     "karma-phantomjs-launcher": "~0.2.1",
