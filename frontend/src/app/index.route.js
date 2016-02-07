@@ -14,12 +14,12 @@
         controller: 'HighlightsController',
         controllerAs: 'highlights',
         resolve: {
-          highlights: function(api, processResponse, $log){
+          highlights: function(api, processResponse){
             return api.then(function(res) {
               return processResponse.createTopSuggestions(res);
             })
           },
-          distances: function($geolocation, $q, distanceService, highlights){
+          distances: function($geolocation, $q, distanceService, highlights, _){
             return $geolocation.getCurrentPosition({timeout: 200}).then(function() {
 
               function distances(destLat, destLng){
@@ -41,7 +41,7 @@
         controller: 'ActivityFeedController',
         controllerAs: 'activityFeed',
         resolve: {
-          checkins: function(api, processResponse, $log){
+          checkins: function(api, processResponse){
             return api.then(function(res){
               return processResponse.removeBlackListed(res);
             });

@@ -6,12 +6,8 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log, $rootScope) {
-
+  function runBlock($log) {
     $log.debug('runBlock end');
-    $rootScope.$on("$stateChangeError", function(event, toState, toParams, fromState, fromParams, error) {
-    $log.error(error);
-    });
   }
 
 })();
