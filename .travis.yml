@@ -13,5 +13,8 @@ addons:
 install:
   - ./travis/frontend-install.sh
 
+before_script:
+  - npm install -g bower
+
 script:
   - ./travis/frontend-build.sh
