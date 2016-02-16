@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "4.3"
+
+install:
+  - ./travis/frontend-install.sh
+
+script:
+  - ./travis/frontend-build.sh

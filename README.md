@@ -1,5 +1,7 @@
 # [After.heap.fi](http://after.heap.fi/)
 
+[![Build Status](https://travis-ci.org/Vilsepi/after.svg?branch=master)](https://travis-ci.org/Vilsepi/after)
+
 A simple web app that recommends beers and bars for afterwork.
 
 Recommendations are currently provided from the following areas:
