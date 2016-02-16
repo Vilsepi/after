@@ -36,6 +36,7 @@ exports.errorHandler = function(title) {
 
   return function(err) {
     gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
+    if (gutil.env.stopOnError) process.exit(1);
     this.emit('end');
   };
 };

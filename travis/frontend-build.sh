@@ -2,4 +2,4 @@
 
 cd frontend
 
-gulp
+gulp --stopOnError
