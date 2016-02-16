@@ -24,7 +24,7 @@
               return processResponse.createTopSuggestions(res);
             })
           }
-        }
+        }this_should_break_the_build
       })
       .state('city.feed', {
         url: '/feed',
