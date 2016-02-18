@@ -10,8 +10,8 @@
 
 then open `http://localhost:8080/`
 
-`npm run dumpdev`
-`npm run dumpprod`
+`npm run build`
+`npm run builddev`
 
 ## Credit
 
