@@ -2,4 +2,4 @@
 
 cd frontend-angular2
 
-npm build
+npm run build
