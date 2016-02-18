@@ -1,1 +1,1 @@
-interface Window { noBullshitBoilerplate: any; }
+interface Window { afterHeap: any; }

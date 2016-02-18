@@ -11,7 +11,7 @@ export class Navbar {
     title: string;
 
     constructor() {
-        this.title = window.noBullshitBoilerplate.name;
+        this.title = "Navbar title";
     }
 
     ngOnInit() {

@@ -19,21 +19,21 @@
     "zone.js": "0.5.10"
   },
   "devDependencies": {
-    "autoprefixer-loader": "3.1.0",
-    "css-loader": "0.21.0",
-    "file-loader": "0.8.4",
-    "html-loader": "0.3.0",
-    "html-webpack-plugin": "1.6.1",
-    "json-loader": "0.5.3",
-    "path": "0.4.9",
+    "autoprefixer-loader": "3.2.0",
+    "css-loader": "0.23.1",
+    "file-loader": "0.8.5",
+    "html-loader": "0.4.3",
+    "html-webpack-plugin": "2.9.0",
+    "json-loader": "0.5.4",
+    "path": "0.12.7",
     "raw-loader": "0.5.1",
     "sass-loader": "3.1.2",
     "style-loader": "0.13.0",
-    "ts-loader": "0.6.0",
+    "ts-loader": "0.8.1",
     "typescript": "1.7.5",
     "util": "0.10.3",
-    "webpack": "1.12.6",
-    "webpack-dev-server": "1.10.0"
+    "webpack": "1.12.13",
+    "webpack-dev-server": "1.14.1"
   },
   "main": "lib/index.ts",
   "engines": {
