@@ -21,6 +21,7 @@ Code contributions and issue reports are welcome. For code contributions: fork, 
 - :heavy_check_mark: Fix Bootstrap-based frontend (migrated from Foundation)
 - :heavy_check_mark: Add navbar and scalable view routing
 - :heavy_check_mark: Split recommendations and latest checkins ("nearby activity") into separate views
+- :heavy_check_mark: Add Travis CI
 - Show distance to venue from user's current location
 - Filter recommended venues by category (only show bars, pubs, restaurants), instead of banning venues one-by-one
 - Show a treasure map of the night for brave adventurers
@@ -29,7 +30,7 @@ Code contributions and issue reports are welcome. For code contributions: fork, 
 - Move blacklists and suggestion logic from frontend to backend
 - Instead of basing recommendations on randomly picked latest checkins, first pick bars and then fetch top-rated, recently drank beers there
 - Remove Bower and use plain NPM instead
-- Add tests and Travis CI
+- Add tests
 
 ## License and attribution
 
