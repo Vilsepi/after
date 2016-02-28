@@ -1,0 +1,9 @@
+{
+  "name": "afterCheckinsBeersVenues",
+  "version": "0.0.1",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "4.5.1",
+    "q": "1.4.1"
+  }
+}
