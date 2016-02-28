@@ -7,10 +7,11 @@ exports.remote = {
   remotePath: ''
 };
 
-exports.dynamo = {
+exports.database = {
   tableCheckins: '',
   tableBeer: '',
-  tableVenue: ''
+  tableVenue: '',
+  bucketName: ''
 };
 
 exports.areas = {

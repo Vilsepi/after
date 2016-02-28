@@ -5,6 +5,8 @@ var _ = require('lodash');
 var Q = require('q');
 var doc = require('dynamodb-doc');
 var dynamo = new doc.DynamoDB();
+var AWS = require('aws-sdk');
+var s3 = new AWS.S3();
 var config = require('./config');
 var helpers = require('./helpers');
 
@@ -79,7 +81,7 @@ function determinedBatchWrite(dynamoParams, batchDoneCallback) {
   });
 }
 
-function save(items, table) {
+function saveToDynamo(items, table) {
   var deferred = Q.defer();
 
   var params = { RequestItems: {} };
@@ -91,9 +93,30 @@ function save(items, table) {
   return deferred.promise;
 }
 
+function saveToS3(items, areaName) {
+  var deferred = Q.defer();
+  var s3params = {
+    'Bucket': config.database.bucketName,
+    'Key': 'data/activity-' + areaName + '.json',
+    'ContentType': 'application/json',
+    'Body': JSON.stringify(items)
+  };
+
+  s3.putObject(s3params, function(err, data) {
+    if (err) {
+      context.fail('Failed to upload data to S3');
+    } else {
+      deferred.resolve("S3 Upload OK");
+    }
+  });
+
+  return deferred.promise;
+}
+
 // Save checkins, beers and venues to dynamo from latest checkins
 function saveCheckinsBeersVenues(checkinData) {
   var checkins = checkinData.items;
+  var areaName = checkinData.areaName;
   var beers = {};
   var venues = {};
 
@@ -107,21 +130,22 @@ function saveCheckinsBeersVenues(checkinData) {
 
     venues[checkin.venue.venue_id] = _(checkin.venue)
     .omit(['is_verified'])
-    .assign({ area: checkinData.areaName })
+    .assign({ area: areaName })
     .value();
   });
 
   return Q.allSettled([
-    save(checkins, config.dynamo.tableCheckins),
-    save(beers, config.dynamo.tableBeer),
-    save(venues, config.dynamo.tableVenue)
+    saveToDynamo(checkins, config.database.tableCheckins),
+    saveToDynamo(beers, config.database.tableBeer),
+    saveToDynamo(venues, config.database.tableVenue),
+    saveToS3(checkins, areaName)
   ]);
 }
 
 
 Q.allSettled([
   getCheckins(config.areas.tampere).then(saveCheckinsBeersVenues),
-  getCheckins(config.areas.helsinki).then(saveCheckinsBeersVenues),
+  getCheckins(config.areas.helsinki).then(saveCheckinsBeersVenues)
 ])
 .then(context.succeed);
 
