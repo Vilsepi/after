@@ -3,7 +3,7 @@ import {Inject} from 'angular2/core';
 import {Http} from 'angular2/http';
 
 @Component({
-  selector: "http",
+  selector: "activity",
   styles: [require('!raw!autoprefixer?browsers=last 2 versions!sass!./index.scss')],
   template: require('./index.html')
 })
