@@ -8,26 +8,26 @@ import {DataType}           from './dataType/index';
 import {RouteConfig, Route, ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
-  selector: "app"
+    selector: "app"
 })
 @View({
-  directives: [Navbar, ROUTER_DIRECTIVES],
-  styles: [require('!raw!autoprefixer?browsers=last 2 versions!sass!./index.scss')],
-  template: require('./index.html')
+    directives: [Navbar, ROUTER_DIRECTIVES],
+    styles: [require('!raw!autoprefixer?browsers=last 2 versions!sass!./index.scss')],
+    template: require('./index.html')
 })
 @RouteConfig([
-  new Route({ path: '/', component: Home, name: 'Home' }),
-  new Route({ path: '/about', component: About, name: 'About', data: { pageId: null } }),
-  new Route({ path: '/activity', component: Activity, name: 'Activity' }),
-  new Route({ path: '/datatype', component: DataType, name: 'DataType' }),
-  new Route({ path: '/github-users/...', component: GithubUsers, name: 'GithubUsers'})
+    new Route({ path: '/', component: Home, name: 'Home' }),
+    new Route({ path: '/about', component: About, name: 'About', data: { pageId: null } }),
+    new Route({ path: '/activity', component: Activity, name: 'Activity' }),
+    new Route({ path: '/datatype', component: DataType, name: 'DataType' }),
+    new Route({ path: '/github-users/...', component: GithubUsers, name: 'GithubUsers'})
 ])
 export class App {
 
-  constructor() {
-  }
+    constructor() {
+    }
 
-  ngOnInit() {
-    console.log('[Component] app running');
-  }
+    ngOnInit() {
+        console.log('[Component] app running');
+    }
 }
