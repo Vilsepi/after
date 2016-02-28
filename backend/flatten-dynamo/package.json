@@ -1,8 +1,0 @@
-{
-  "name": "afterHeapFlatten",
-  "version": "0.0.1",
-  "license": "MIT",
-  "dependencies": {
-    "lodash": "4.0.0"
-  }
-}
