@@ -1,16 +1,6 @@
-<ol class="breadcrumb">
-    <li class="active">Http requests</li>
-</ol>
-<button class="btn" (click)="getOctocatProfile()">Get Octocat's GitHub Profile</button>
-<hr/>
-<div class="card text-center" *ngIf="octocat">
-    <img class="img-circle" src="{{octocat.avatar_url}}" width="100">
-    <div class="card-block">
-        <h4 class="card-title">{{octocat.name}} ({{octocat.login}})</h4>
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Location: {{octocat.location}}</li>
-        <li class="list-group-item">Conpany: {{octocat.company}}</li>
-        <li class="list-group-item">Email: {{octocat.email}}</li>
-    </ul>
+<div *ngFor='#checkin of checkins'>
+  {{ checkin.created_at }}
+  <b>{{ checkin.beer.beer_name }}</b>
+  {{ checkin.venue.venue_name }}
+  <i>-{{ checkin.user.user_name }}</i>
 </div>

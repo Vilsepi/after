@@ -3,7 +3,7 @@ import {Navbar}             from './navbar/index';
 import {Home}               from './home/index';
 import {About}              from './about/index';
 import {GithubUsers}        from './githubUsers/index';
-import {HttpPage}           from './http/index';
+import {Activity}           from './http/index';
 import {DataType}           from './dataType/index';
 import {RouteConfig, Route, ROUTER_DIRECTIVES} from 'angular2/router';
 
@@ -18,7 +18,7 @@ import {RouteConfig, Route, ROUTER_DIRECTIVES} from 'angular2/router';
 @RouteConfig([
     new Route({ path: '/', component: Home, name: 'Home' }),
     new Route({ path: '/about', component: About, name: 'About', data: { pageId: null } }),
-    new Route({ path: '/http', component: HttpPage, name: 'Http' }),
+    new Route({ path: '/http', component: Activity, name: 'Activity' }),
     new Route({ path: '/datatype', component: DataType, name: 'DataType' }),
     new Route({ path: '/github-users/...', component: GithubUsers, name: 'GithubUsers'})
 ])
