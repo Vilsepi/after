@@ -14,6 +14,7 @@ module.exports = {
         path: wwwPath,
         filename: '[name]-[hash:6].js'
     },
+    devtool: 'source-map',
     module: {
         loaders: [{
             test: /\.ts$/,
