@@ -8,9 +8,8 @@
     "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
     "listFiles": false,
-    "outDir": "dist"
+    "outDir": "www"
   },
-  "exclude": [ "node_modules" ]
+  "exclude": [ "node_modules", "www" ]
 }
