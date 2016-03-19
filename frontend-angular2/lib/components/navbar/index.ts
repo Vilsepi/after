@@ -1,5 +1,5 @@
-import {Component, View} from 'angular2/core';
-import { RouterLink} from 'angular2/router';
+import {Component} from 'angular2/core';
+import {RouterLink} from 'angular2/router';
 
 @Component({
     selector: "navbar",

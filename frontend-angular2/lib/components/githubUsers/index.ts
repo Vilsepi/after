@@ -1,4 +1,4 @@
-import {Component, View} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {RouteConfig, Route, ROUTER_DIRECTIVES} from 'angular2/router';
 import {Item} from './item/index';
 import {List} from './list/index';
