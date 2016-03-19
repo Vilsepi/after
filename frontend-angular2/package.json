@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --json --progress",
     "builddev": "rm -rf www/* && webpack --progress --colors -d",
-    "build": "rm -rf www/* && webpack --progress --colors --config webpack.config.prod.js"
+    "build": "rm -rf www/* && webpack --progress --colors --profile --display-error-details --display-cached --config webpack.config.prod.js"
   },
   "dependencies": {
     "angular2": "2.0.0-beta.11",
