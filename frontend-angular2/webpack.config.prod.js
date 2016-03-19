@@ -46,15 +46,12 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin({
-
-            /* Something of these are required for working dist build */
-            beautify: false, //prod
-            deadCode: true,
-            unused: true,
-            compress: {screw_ie8: true}, //prod
-            comments: false, //prod
+            sourceMap: false,
             mangle: {
                 screw_ie8: true,
+                // Build produces broken dist unless mangle skips angular2 modules
+                // https://github.com/mishoo/UglifyJS2/issues/999
+                // https://github.com/AngularClass/angular2-webpack-starter/issues/262
                 except: [
                     'App',
                     'About',
@@ -103,19 +100,8 @@ module.exports = {
                     'ReplacePipe',
                     'I18nPluralPipe',
                     'I18nSelectPipe'
-                    ] // Needed for uglify RouterLink problem
-                }, // prod
-            /* Something of these are required for working dist build */
-
-            minimize: true,
-            sourceMap: false,
-            /*mangle: {
-                except: ['$super', '$', 'exports', 'require']
-            }/*,
-            output: {
-                comments: true
-            },
-            */
+                    ]
+                }
         })
     ]
 };
