@@ -1,25 +1,18 @@
 
-Install dependencies
+## Prerequisites
 
-    npm install
-    bower install
+- Node.js and npm (tested on 4.3.1 and 3.7.2)
 
-Develop
+## Develop
 
-- `gulp serve` to start BrowserSync server on your source files with live reload
+- `npm install`
+- `npm start`
 
-Test
+Server will run at `http://localhost:8080/`
 
-- `gulp test` to run your unit tests with Karma
-- `gulp test:auto` to run your unit tests with Karma in watch mode
-- `gulp protractor` to launch your e2e tests with Protractor
+- `npm run build`
+- `npm run builddev`
 
-Build dist version
+## Credit
 
-- `gulp` to build an optimized version of your application in folder dist
-- `gulp serve:dist` to start BrowserSync server on your optimized application without live reload
-- `gulp protractor:dist` to launch your e2e tests with Protractor on the dist files
-
-## Coding conventions
-
-The project structure has been generated with [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular). Refer to its [user guide](https://github.com/Swiip/generator-gulp-angular/blob/master/docs/user-guide.md) and the [Best Practice Recommendations for Angular App Structure](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub).
+Based on [angular2-nobullshit-boilerplate](https://github.com/shprink/angular2-nobullshit-boilerplate)

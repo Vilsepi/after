@@ -11,7 +11,7 @@ addons:
       - g++-4.8
 
 install:
-  - ./travis/frontend2-install.sh
+  - ./travis/frontend-install.sh
 
 script:
-  - ./travis/frontend2-build.sh
+  - ./travis/frontend-build.sh

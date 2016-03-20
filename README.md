@@ -7,14 +7,11 @@ A simple web app that recommends beers and bars for afterwork.
 Recommendations are currently provided from the following areas:
 
 - [Tampere](https://www.freemaptools.com/radius-around-point.htm?clat=61.4985&clng=23.7717&r=1.71&fs=true&lc=4444ff&lw=3&fc=ddddff&nomoreradius=true)
-- [Hämeenlinna](https://www.freemaptools.com/radius-around-point.htm?clat=60.9963&clng=24.4629&r=1.06&fs=true&lc=4444ff&lw=3&fc=ddddff&nomoreradius=true)
 - [Helsinki](https://www.freemaptools.com/radius-around-point.htm?clat=60.1671&clng=24.9409&r=2.39&fs=true&lc=4444ff&lw=3&fc=ddddff&nomoreradius=true)
 
 ## Contributing
 
 Code contributions and issue reports are welcome. For code contributions: fork, clone, commit, push, send pull request.
-
-**Please note:** While the `frontend-legacy` is the currently live version, it is actively being replaced by the newer `frontend` directory which has proper tooling and structure. Focus your efforts on the newer version.
 
 ## Roadmap
 
@@ -22,14 +19,13 @@ Code contributions and issue reports are welcome. For code contributions: fork, 
 - :heavy_check_mark: Add navbar and scalable view routing
 - :heavy_check_mark: Split recommendations and latest checkins ("nearby activity") into separate views
 - :heavy_check_mark: Add Travis CI
+- :heavy_check_mark: Remove Bower and use plain NPM instead
 - Show distance to venue from user's current location
-- Filter recommended venues by category (only show bars, pubs, restaurants), instead of banning venues one-by-one
-- Show a treasure map of the night for brave adventurers
-- Show no rating if beer rating is 0
-- For recommended beers, show the global rating instead of the rating of a single person in the latest checkin
-- Move blacklists and suggestion logic from frontend to backend
+- Filter recommended venues by category (only show bars, pubs, restaurants) in the backend, instead of banning venues one-by-one in the frontend
 - Instead of basing recommendations on randomly picked latest checkins, first pick bars and then fetch top-rated, recently drank beers there
-- Remove Bower and use plain NPM instead
+- Show a treasure map of the night for brave adventurers
+- For recommended beers, show the global rating instead of the rating of a single person in the latest checkin
+- Show no rating if beer rating is 0
 - Add tests
 
 ## License and attribution
