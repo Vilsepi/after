@@ -10,10 +10,16 @@ addons:
     packages:
       - g++-4.8
 
-before_install: cd frontend
+before_install:
+  - pwd
+  - cd frontend
 install:
+  - pwd
   - npm install
 
-before_script: cd frontend
+before_script:
+  - pwd
+  - cd frontend
 script:
+  - pwd
   - npm run build
