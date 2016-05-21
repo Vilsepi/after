@@ -1,4 +1,11 @@
 <div class="wrapper">
   <h2>Activity feed</h2>
-  <p>This is the feed component</p>
+  
+  <div *ngFor='#checkin of checkins'>
+    {{ checkin.created_at }}
+    <b>{{ checkin.beer.beer_name }}</b>
+    {{ checkin.venue.venue_name }}
+    <i>"{{ checkin.checkin_comment }}" -{{ checkin.user.user_name }}</i>
+  </div>
+
 </div>
