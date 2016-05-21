@@ -15,12 +15,14 @@ import {
   it,
   tick
 } from '@angular/core/testing';
+import {HTTP_PROVIDERS} from '@angular/http';
 import {SpyLocation} from '@angular/common/testing';
 import {TestComponentBuilder} from '@angular/compiler/testing';
 import {AfterApp} from './app';
 
 describe('Router', () => {
   beforeEachProviders(() => [
+    HTTP_PROVIDERS,
     RouterOutletMap,
     {provide: Location, useClass: SpyLocation},
     {provide: RouterUrlSerializer, useClass: DefaultRouterUrlSerializer},
