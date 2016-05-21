@@ -2,5 +2,5 @@
   {{ checkin.created_at }}
   <b>{{ checkin.beer.beer_name }}</b>
   {{ checkin.venue.venue_name }}
-  <i>-{{ checkin.user.user_name }}</i>
+  <i>"{{ checkin.checkin_comment }}" -{{ checkin.user.user_name }}</i>
 </div>

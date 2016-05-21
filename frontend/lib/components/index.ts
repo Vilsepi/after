@@ -1,9 +1,9 @@
-import {Component}          from 'angular2/core';
-import {Navbar}             from './navbar/index';
-import {Home}               from './home/index';
-import {GithubUsers}        from './githubUsers/index';
-import {Activity}           from './activity/index';
-import {RouteConfig, Route, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component} from 'angular2/core';
+import {Navbar} from './navbar/index';
+import {RecommendedToday} from './recommendedToday/index';
+import {GithubUsers} from './githubUsers/index';
+import {ActivityFeed} from './activityFeed/index';
+import {RouteConfig, Route, Router, ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
     selector: "app",
@@ -12,16 +12,16 @@ import {RouteConfig, Route, ROUTER_DIRECTIVES} from 'angular2/router';
     template: require('./index.html')
 })
 @RouteConfig([
-    new Route({ path: '/', component: Home, name: 'Home' }),
-    new Route({ path: '/activity', component: Activity, name: 'Activity' }),
-    new Route({ path: '/github-users/...', component: GithubUsers, name: 'GithubUsers'})
+    new Route({ path: '/today/:city', name: 'RecommendedToday', component: RecommendedToday }),
+    new Route({ path: '/feed/:city',  name: 'ActivityFeed',     component: ActivityFeed })
 ])
 export class App {
 
-    constructor() {
+    constructor(private _router: Router) {
     }
 
     ngOnInit() {
         console.log('[Component] app running');
+        this._router.navigate(['RecommendedToday', { city: 'tampere' }]);
     }
 }
