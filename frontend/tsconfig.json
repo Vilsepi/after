@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "declaration": false,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "listFiles": false,
-    "outDir": "www"
+    "module": "commonjs",
+    "noEmit": true,
+    "sourceMap": true,
+    "target": "es5"
   },
-  "exclude": [ "node_modules", "www" ]
+  "exclude": [
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts"
+  ]
 }
