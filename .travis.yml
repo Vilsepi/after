@@ -11,15 +11,10 @@ addons:
       - g++-4.8
 
 before_install:
-  - pwd
   - cd frontend
+
 install:
-  - pwd
   - npm install
 
-before_script:
-  - pwd
-  - cd frontend
 script:
-  - pwd
   - npm run build
