@@ -32,9 +32,13 @@ def filter_checkins(checkins):
         [checkin.get('venue').pop(key, None) for key in ['venue_slug', 'is_verified']]
     return checkins
 
-def save_to_s3(checkins, area_id):
+def save_all_to_dynamodb(checkins, area_id):
+    pass
+
+def save_checkins_to_s3(checkins, area_id):
     response = s3.Bucket(config.storage['bucket_name']).put_object(
         Key='data/fetcher-checkins-{}.json'.format(area_id),
+        ContentType='application/json',
         Body=json.dumps(checkins))
     print response
 
@@ -49,7 +53,7 @@ def lambda_handler(event, context):
                 venues[checkin.get('venue').get('venue_id')] = checkin.get('venue')
             beers[checkin.get('beer').get('bid')] = checkin.get('beer')
 
-        save_to_s3(checkins, area_id)
+        save_checkins_to_s3(checkins, area_id)
 
 
 if __name__ == '__main__':
