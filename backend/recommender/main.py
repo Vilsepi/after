@@ -9,13 +9,18 @@ import random
 simpledb = boto3.client('sdb')
 
 MAX_COUNT = 3
+RANDOMIZATION_WINDOW = 10
 
 # Picks new recommended venues from least recommended venues
-def pick_recommended_venues():
+def pick_recommended_venues(area):
+    print "Building recommendation for area", area
     recommended_venues = []
 
     venues_never_recommended = simpledb.select(
-        SelectExpression='select * from ' + config.storage['table_venue'] + ' where recommendation_count is null limit 20'
+        SelectExpression="select * from {} where recommendation_count is null and area = '{}' limit {}".format(
+            config.storage['table_venue'],
+            area,
+            RANDOMIZATION_WINDOW)
     )
     if venues_never_recommended.get('Items'):
         count = len(venues_never_recommended.get('Items'))
@@ -25,7 +30,10 @@ def pick_recommended_venues():
     if len(recommended_venues) < MAX_COUNT:
         print "We have {}, which is not enough. Let's rerecommend old venues".format(len(recommended_venues))
         venues_previously_recommended = simpledb.select(
-            SelectExpression='select * from ' + config.storage['table_venue'] + ' where recommendation_count is not null order by recommendation_count asc limit 20'
+            SelectExpression="select * from {} where recommendation_count is not null and area = '{}' order by recommendation_count asc limit {}".format(
+                config.storage['table_venue'],
+                area,
+                RANDOMIZATION_WINDOW)
         )
         if venues_previously_recommended.get('Items'):
             count = len(venues_previously_recommended.get('Items'))
@@ -44,7 +52,6 @@ def pick_recommended_venues():
                 print "  {}: {}".format(attribute['Name'], attribute['Value'])
             if attribute['Name'] == 'recommendation_count':
                 recommendation_count = int(attribute['Value'])
-        print "  RECOS: " + str(recommendation_count)
 
         response = simpledb.put_attributes(
                 DomainName=config.storage['table_venue'],
@@ -63,8 +70,11 @@ def pick_recommended_venues():
                 ]
             )
 
+    return recommended_venues
+
 def lambda_handler(event, context):
-    pick_recommended_venues()
+    for area in config.areas:
+        venues = pick_recommended_venues(area)
 
 
 if __name__ == '__main__':
