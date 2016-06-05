@@ -5,7 +5,9 @@ import json
 import datetime
 import config
 import random
+from collections import defaultdict
 
+s3 = boto3.resource('s3')
 simpledb = boto3.client('sdb')
 
 MAX_COUNT = 3
@@ -41,40 +43,55 @@ def pick_recommended_venues(area):
             recommended_venues = recommended_venues + random.sample(venues_previously_recommended.get('Items'), min(count, MAX_COUNT - len(recommended_venues)))
 
     print "Now we have {} and we should get {}".format(len(recommended_venues), MAX_COUNT)
-    print "Final recommendations:"
-    for venue in recommended_venues:
-        name = venue['Name']
-        attributes = venue['Attributes']
-        print name
-        recommendation_count = 0
-        for attribute in attributes:
-            if attribute['Name'] != 'json_object':
-                print "  {}: {}".format(attribute['Name'], attribute['Value'])
-            if attribute['Name'] == 'recommendation_count':
-                recommendation_count = int(attribute['Value'])
-
-        response = simpledb.put_attributes(
-                DomainName=config.storage['table_venue'],
-                ItemName=name,
-                Attributes=[
-                    {
-                        'Name': 'recommendation_count',
-                        'Value': str(recommendation_count + 1).zfill(7),
-                        'Replace': True
-                    },
-                    {
-                        'Name': 'recommendation_updated',
-                        'Value': datetime.datetime.utcnow().isoformat() + 'Z',
-                        'Replace': True
-                    }
-                ]
-            )
-
     return recommended_venues
+
+# Deserializes JSON stored in SimpleDB and flattens dictionaries
+def flatten_structures(simpledb_items):
+    venues = []
+    for item in simpledb_items:
+        venue = defaultdict(dict)
+        attributes = {attr['Name']:attr['Value'] for attr in item['Attributes']}
+
+        venue = json.loads(attributes['json_object'])
+        venue['recommendation_count'] = int(attributes['recommendation_count'])
+
+        venues.append(venue)
+    return venues
+
+# Updates recommendations
+def update_recommendations(venues, area):
+    recommendation_updated = datetime.datetime.utcnow().isoformat() + 'Z'
+
+    for venue in venues:
+        venue['recommendation_count'] += 1
+
+        # Update recommendation count and timestamp in SimpleDB
+        response = simpledb.put_attributes(
+            DomainName=config.storage['table_venue'],
+            ItemName=str(venue['venue_id']),
+            Attributes=[
+                {
+                    'Name': 'recommendation_count',
+                    'Value': str(venue['recommendation_count']).zfill(7),
+                    'Replace': True
+                },
+                {
+                    'Name': 'recommendation_updated',
+                    'Value': recommendation_updated,
+                    'Replace': True
+                }
+            ]
+        )
+
+        # TODO Write recommendations to S3
+        print json.dumps(venue, indent=2)
 
 def lambda_handler(event, context):
     for area in config.areas:
-        venues = pick_recommended_venues(area)
+        venues = flatten_structures(pick_recommended_venues(area))
+        update_recommendations(venues, area)
+
+        # TODO Get venue_info and top_beers from remote
 
 
 if __name__ == '__main__':
