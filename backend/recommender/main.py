@@ -60,7 +60,7 @@ def flatten_structures(simpledb_items):
 
 # Updates recommendations
 def update_recommendations(venues, area):
-    recommendation_updated = datetime.datetime.utcnow().isoformat() + 'Z'
+    recommendations_updated = datetime.datetime.utcnow().isoformat() + 'Z'
 
     for venue in venues:
         venue['recommendation_count'] += 1
@@ -77,14 +77,21 @@ def update_recommendations(venues, area):
                 },
                 {
                     'Name': 'recommendation_updated',
-                    'Value': recommendation_updated,
+                    'Value': recommendations_updated,
                     'Replace': True
                 }
             ]
         )
 
-        # TODO Write recommendations to S3
-        print json.dumps(venue, indent=2)
+    # Write recommendations to S3
+    response = s3.Bucket(config.storage['bucket_name']).put_object(
+        Key='data/recommender-venues-{}.json'.format(area),
+        ContentType='application/json',
+        Body=json.dumps({
+            'recommendations_updated': recommendations_updated,
+            'recommendations': venues
+        }))
+    print response
 
 def lambda_handler(event, context):
     for area in config.areas:
