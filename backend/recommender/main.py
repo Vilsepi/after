@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import boto3
+import requests
 import json
 import datetime
 import config
@@ -57,12 +58,40 @@ def flatten_structures(simpledb_items):
         venues.append(venue)
     return venues
 
+# Writes Python structure to S3 as JSON
+def write_to_s3(key, data):
+    response = s3.Bucket(config.storage['bucket_name']).put_object(
+        Key=key,
+        ContentType='application/json',
+        Body=json.dumps(data))
+    print response
+
+# Fetches venue details
+def get_detailed_venue(venue_id):
+    print "Fetching venue details from remote for venue {}".format(venue_id)
+    url = "{}/venue/info/{}".format(config.remote['base_url'], venue_id)
+    params = {
+        'client_id': config.remote['client_id'],
+        'client_secret': config.remote['client_secret']
+    }
+    response = requests.get(url, params=params)
+    print "Ratelimit remaining:", response.headers.get('x-ratelimit-remaining')
+
+    if response.status_code == 200:
+        return response.json().get('response')
+    return []
+
 # Updates recommendations
 def update_recommendations(venues, area):
     recommendations_updated = datetime.datetime.utcnow().isoformat() + 'Z'
 
+    # TODO venue objects are actually completely unnecessary. To fetch the top
+    # beers of a venue, the detailed venue_info must be fetched, which contains
+    # everything and more than the basic venue objects.
+    detailed_venues = []
     for venue in venues:
         venue['recommendation_count'] = int(venue.get('recommendation_count', '0')) + 1
+        detailed_venues.append(get_detailed_venue(venue['venue_id']))
 
         # Update recommendation count and timestamp in SimpleDB
         response = simpledb.put_attributes(
@@ -83,21 +112,16 @@ def update_recommendations(venues, area):
         )
 
     # Write recommendations to S3
-    response = s3.Bucket(config.storage['bucket_name']).put_object(
-        Key='data/recommender-venues-{}.json'.format(area),
-        ContentType='application/json',
-        Body=json.dumps({
+    write_to_s3('data/recommender-venues-{}.json'.format(area),
+        {
             'recommendations_updated': recommendations_updated,
-            'recommendations': venues
-        }))
-    print response
+            'recommendations': detailed_venues
+        })
 
 def lambda_handler(event, context):
     for area in config.areas:
         venues = flatten_structures(pick_recommended_venues(area))
         update_recommendations(venues, area)
-
-        # TODO Get venue_info and top_beers from remote
 
 
 if __name__ == '__main__':
