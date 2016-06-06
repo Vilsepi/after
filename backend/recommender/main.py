@@ -53,7 +53,6 @@ def flatten_structures(simpledb_items):
         attributes = {attr['Name']:attr['Value'] for attr in item['Attributes']}
 
         venue = json.loads(attributes['json_object'])
-        venue['recommendation_count'] = int(attributes['recommendation_count'])
 
         venues.append(venue)
     return venues
@@ -63,7 +62,7 @@ def update_recommendations(venues, area):
     recommendations_updated = datetime.datetime.utcnow().isoformat() + 'Z'
 
     for venue in venues:
-        venue['recommendation_count'] += 1
+        venue['recommendation_count'] = int(venue.get('recommendation_count', '0')) + 1
 
         # Update recommendation count and timestamp in SimpleDB
         response = simpledb.put_attributes(
