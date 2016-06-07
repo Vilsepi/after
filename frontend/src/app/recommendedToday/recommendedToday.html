@@ -1,10 +1,10 @@
 <div class="wrapper">
   <h2>Today's recommendations</h2>
-  <p>Recommendations updated {{ recommendations.recommendations_updated }}</p>
+  <p>Recommendations updated {{ recommendations?.recommendations_updated }}</p>
 
 <div class="container">
 
-  <div class="row venue" *ngFor='let venue of recommendations.recommendations'>
+  <div class="row venue" *ngFor='let venue of recommendations?.recommendations'>
     <div class="six columns">
       <img src="{{ venue.venue.venue_icon.sm }}">
       <h3><a href="{{ venue.venue.foursquare.foursquare_url }}">{{ venue.venue.venue_name }}</a></h3>
