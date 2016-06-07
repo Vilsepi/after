@@ -1,3 +1,10 @@
 .wrapper {
-  background: lightgreen;
+}
+
+.venue {
+  margin: 10px;
+}
+
+.beer {
+  margin-left: 5px
 }
