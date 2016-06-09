@@ -4,9 +4,9 @@ import {RecommendationsService} from '../recommendationsService/recommendationsS
 import {Recommendations} from '../recommendations/recommendations';
 
 @Component({
-  selector: 'recommended-today',
-  styles: [require('./recommendedToday.css')],
-  template: require('./recommendedToday.html')
+    selector: 'recommended-today',
+    styles: [require('./recommendedToday.css')],
+    template: require('./recommendedToday.html')
 })
 export class RecommendedToday implements OnInit {
     recommendations: Recommendations;
