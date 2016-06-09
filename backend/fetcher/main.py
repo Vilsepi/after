@@ -10,6 +10,33 @@ import config
 s3 = boto3.resource('s3')
 simpledb = boto3.client('sdb')
 
+uninteresting_categories = [
+    'Bath House',
+    'Beach',
+    'Boat or Ferry',
+    'Building',
+    'Church',
+    'City',
+    'College Residence Hall',
+    'Conference Room',
+    'Country',
+    'Field',
+    'Flea Market',
+    'Grocery Store',
+    'Harbor / Marina',
+    'Hostel',
+    'Hotel',
+    'Lawyer',
+    'Neighborhood',
+    'Office',
+    'Park',
+    'Plaza',
+    'Road',
+    'Scenic Lookout',
+    'Train Station',
+    'Train'
+]
+
 # Fetches latest checkins from a given geographical area
 def get_checkins(area_id):
     print "Fetching latest checkins from remote for area " + area_id
@@ -43,6 +70,17 @@ def filter_checkins(checkins):
             [checkin.get('venue').get('contact').pop(key, None) for key in ['twitter']]
 
     return checkins
+
+# Check venue categories to determine whether the venue is suitable
+# Note: primary_category can be null, categories list can be empty
+def recommendable_venue(venue):
+    if venue.get('primary_category','') == 'Nightlife Spot':
+        return True
+    for category in venue['categories']['items']:
+        if category['category_name'] in uninteresting_categories:
+            print "Dropping venue {} {} due to secondary category {}".format(venue['venue_id'], venue['venue_name'], category['category_name'])
+            return False
+    return True
 
 # Writes items to SimpleDB
 def simpledb_put(items, domain, area_id):
@@ -93,8 +131,9 @@ def lambda_handler(event, context):
         beers = defaultdict(dict)
 
         for checkin in checkins:
-            if checkin.get('venue'):
-                venues[checkin.get('venue').get('venue_id')] = checkin.get('venue')
+            venue = checkin.get('venue')
+            if venue and recommendable_venue(venue):
+                venues[venue.get('venue_id')] = venue
             beers[checkin.get('beer').get('bid')] = checkin.get('beer')
 
         save_checkins_to_s3(checkins, area_id)
