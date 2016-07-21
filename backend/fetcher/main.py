@@ -33,6 +33,7 @@ uninteresting_categories = [
     'Plaza',
     'Road',
     'Scenic Lookout',
+    'Shopping Mall',
     'Train Station',
     'Train'
 ]
