@@ -20,11 +20,11 @@ Code contributions and issue reports are welcome. For code contributions: fork, 
 - :heavy_check_mark: Split recommendations and latest checkins ("nearby activity") into separate views
 - :heavy_check_mark: Add Travis CI
 - :heavy_check_mark: Remove Bower and use plain NPM instead
+- :heavy_check_mark: For recommended beers, show the global rating instead of the rating of a single person in the latest checkin
+- :heavy_check_mark: Filter recommended venues by category (only show bars, pubs, restaurants) in the backend, instead of banning venues one-by-one in the frontend
+- :heavy_check_mark: Instead of basing recommendations on randomly picked latest checkins, first pick bars and then fetch top-rated beers there
 - Show distance to venue from user's current location
-- Filter recommended venues by category (only show bars, pubs, restaurants) in the backend, instead of banning venues one-by-one in the frontend
-- Instead of basing recommendations on randomly picked latest checkins, first pick bars and then fetch top-rated, recently drank beers there
 - Show a treasure map of the night for brave adventurers
-- For recommended beers, show the global rating instead of the rating of a single person in the latest checkin
 - Show no rating if beer rating is 0
 - Add tests
 
