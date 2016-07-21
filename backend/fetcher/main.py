@@ -11,6 +11,7 @@ s3 = boto3.resource('s3')
 simpledb = boto3.client('sdb')
 
 uninteresting_categories = [
+    'Art Gallery',
     'Bath House',
     'Beach',
     'Boat or Ferry',
