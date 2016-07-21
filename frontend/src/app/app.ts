@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
+import {provideRouter, RouterConfig, ROUTER_DIRECTIVES}  from '@angular/router';
 import {RecommendedToday} from './recommendedToday/recommendedToday';
 import {ActivityFeed} from './activityFeed/activityFeed';
 import {RecommendationsService} from './recommendationsService/recommendationsService';
@@ -12,8 +12,14 @@ import {ActivityFeedService} from './activityFeedService/activityFeedService';
     directives: [ROUTER_DIRECTIVES],
     providers: [RecommendationsService, ActivityFeedService]
 })
-@Routes([
-    {path: '/', component: RecommendedToday},
-    {path: '/feed', component: ActivityFeed}
-])
 export class AfterApp { }
+
+const routes: RouterConfig = [
+    {path: '', redirectTo: '/recommendations', pathMatch: 'full'},
+    {path: 'recommendations', component: RecommendedToday},
+    {path: 'feed', component: ActivityFeed}
+];
+
+export const appRouterProviders = [
+  provideRouter(routes)
+];
