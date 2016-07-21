@@ -3,28 +3,24 @@
   <div class="row venue" *ngFor='let venue of recommendations?.recommendations'>
 
     <div class="col-sm-12">
-      <img src="{{ venue.venue.venue_icon.sm }}">
+      <img class="venue-icon" src="{{ venue.venue.venue_icon.sm }}">
       <span>
-        <a href="{{ venue.venue.foursquare.foursquare_url }}">{{ venue.venue.venue_name }}</a>
-      </span>
-
-      <br>
-      <div class="tag" *ngFor='let category of venue.venue.categories.items'>
+        <h2><a href="{{ venue.venue.foursquare.foursquare_url }}">{{ venue.venue.venue_name }}</a></h2>
+        <div class="tag" *ngFor='let category of venue.venue.categories.items'>
         {{ category.category_name }}
-      </div>
+        </div>
+      </span>
     </div>
 
-    <div class="col-sm-12">
+    <div class="col-sm-12 beer-list">
       <div class="beer" *ngFor='let beer of venue.venue.top_beers.items'>
-        <b>{{ beer.beer.beer_name }}</b>
-        {{ beer.beer.beer_abv }}%<br>
-        {{ beer.beer.beer_style }}
-        {{ beer.beer.rating_score }}/5
+        <b>{{ beer.beer.beer_name }}</b> {{ beer.beer.beer_abv }}% {{ beer.beer.rating_score|number:'1.1-1' }}/5.0
+        <span class="beer-details">{{ beer.brewery.brewery_name }}<br>{{ beer.beer.beer_style }}</span>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <p>Päivitetty {{ recommendations?.recommendations_updated }}</p>
+  <div class="row recommendations-footer">
+    <p>ehdotukset päivitetty {{ recommendations?.recommendations_updated }}</p>
   </div>
 </div>

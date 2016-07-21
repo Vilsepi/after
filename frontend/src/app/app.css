@@ -1,13 +1,13 @@
 .header {
   background: #2a395e;
-  padding: 40px 20px 50px 20px;
+  padding: 40px 20px 20px 20px;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 50px;
 }
 
 .btn-group {
-  margin: 0 10px;
+  margin: 3px 10px;
 }
 
 .logo {
@@ -15,12 +15,14 @@
   height: 150px;
   width: 150px;
   display: inline-block;
+  vertical-align: middle;
 }
 
 .header h1 {
   font-size: 60px;
   font-weight: 300;
   color: #e5cea8;
+  margin-bottom: 30px
 }
 
 .footer {
