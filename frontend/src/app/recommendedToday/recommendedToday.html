@@ -13,7 +13,7 @@
     </div>
 
     <div class="col-sm-12 beer-list">
-      <div class="beer" *ngFor='let beer of venue.venue.top_beers.items'>
+      <div class="beer" *ngFor='let beer of venue.venue.top_beers.items.slice(0,4)'>
         <b>{{ beer.beer.beer_name }}</b> {{ beer.beer.beer_abv }}% {{ beer.beer.rating_score|number:'1.1-1' }}/5.0
         <span class="beer-details">{{ beer.brewery.brewery_name }}<br>{{ beer.beer.beer_style }}</span>
       </div>
