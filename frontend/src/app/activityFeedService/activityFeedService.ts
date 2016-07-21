@@ -7,10 +7,10 @@ export class ActivityFeedService {
 
     constructor(private http: Http) { }
 
-    private feedUrl = 'https://s3-eu-west-1.amazonaws.com/after.heap.fi/data/fetcher-checkins-tampere.json';
+    private feedUrlPrefix = 'https://s3-eu-west-1.amazonaws.com/after.heap.fi/data/fetcher-checkins-';
 
-    getLatestCheckins(): Observable<Object[]> {
-        return this.http.get(this.feedUrl)
+    getLatestCheckins(city: String): Observable<Object[]> {
+        return this.http.get(this.feedUrlPrefix + city + '.json')
             .map(data => data.json());
     }
 }

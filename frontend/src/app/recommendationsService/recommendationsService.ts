@@ -8,10 +8,10 @@ export class RecommendationsService {
   
     constructor(private http: Http) { }
 
-    private recommendationsUrl = 'https://s3-eu-west-1.amazonaws.com/after.heap.fi/data/recommender-venues-tampere.json';
+    private recommendationsUrlPrefix = 'https://s3-eu-west-1.amazonaws.com/after.heap.fi/data/recommender-venues-';
 
-    getRecommendations(): Observable<Recommendations> {
-        return this.http.get(this.recommendationsUrl)
-        .map(data => data.json());
+    getRecommendations(id: String): Observable<Recommendations> {
+        return this.http.get(this.recommendationsUrlPrefix + id + '.json')
+            .map(data => data.json());
     }
 }

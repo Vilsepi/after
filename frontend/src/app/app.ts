@@ -15,9 +15,9 @@ import {ActivityFeedService} from './activityFeedService/activityFeedService';
 export class AfterApp { }
 
 const routes: RouterConfig = [
-    {path: '', redirectTo: '/recommendations', pathMatch: 'full'},
-    {path: 'recommendations', component: RecommendedToday},
-    {path: 'feed', component: ActivityFeed}
+    {path: '', redirectTo: '/recommendations/tampere', pathMatch: 'full'},
+    {path: 'recommendations/:city', component: RecommendedToday},
+    {path: 'feed/:city', component: ActivityFeed}
 ];
 
 export const appRouterProviders = [
