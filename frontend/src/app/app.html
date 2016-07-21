@@ -1,10 +1,26 @@
-<div class="wrapper">
-  <h1>After</h1>
-  <div>
-    <a [routerLink]="['/']">Recommended today</a>
-    <a [routerLink]="['/feed']">Recent activity</a>
+<div class="header container-fluid">
+  <h1>Päivän <div class="logo"></div>afteri</h1>
+
+  <div class="btn-group" role="group">
+    <a class="btn btn-secondary-outline" [routerLink]="['/']">Tänään</a>
+    <a class="btn btn-secondary-outline" [routerLink]="['/feed']">Juuri nyt</a>
+    <!--<a class="btn btn-secondary-outline disabled" [routerLink]="['/feed']">Seikkailu</a>-->
   </div>
-  <div>
-    <router-outlet></router-outlet>
+
+  <div class="btn-group" role="group">
+    <a class="btn btn-secondary-outline" [routerLink]="['/']">Tampere</a>
+    <a class="btn btn-secondary-outline disabled" [routerLink]="['/feed']">Helsinki</a>
   </div>
+
+</div>
+
+<div>
+<router-outlet></router-outlet>
+</div>
+<div>
+
+<div class="footer">
+  <a href="https://github.com/Vilsepi/after">lähdekoodi githubissa</a> &#183;
+  <a href="https://untappd.com/">data untappd:sta</a> &#183;
+  <a href="https://twitter.com/Vilsepi">@vilsepi</a>
 </div>

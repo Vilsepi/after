@@ -5,7 +5,7 @@ const CommonsChunkPlugin   = require('webpack/lib/optimize/CommonsChunkPlugin');
 const CompressionPlugin    = require('compression-webpack-plugin');
 const CopyWebpackPlugin    = require('copy-webpack-plugin');
 const DedupePlugin         = require('webpack/lib/optimize/DedupePlugin');
-const DefinePlugin          = require('webpack/lib/DefinePlugin');
+const DefinePlugin         = require('webpack/lib/DefinePlugin');
 const OccurenceOrderPlugin = require('webpack/lib/optimize/OccurenceOrderPlugin');
 const UglifyJsPlugin       = require('webpack/lib/optimize/UglifyJsPlugin');
 
@@ -31,7 +31,7 @@ module.exports = {
     ]
   },
   output: {
-    path    : './dist',
+    path: './dist',
     filename: 'bundle.js'
   },
   plugins: [

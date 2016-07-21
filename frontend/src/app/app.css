@@ -1,3 +1,34 @@
-.wrapper {
-  padding: 20px;
+.header {
+  background: #2a395e;
+  padding: 40px 20px 50px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.btn-group {
+  margin: 0 10px;
+}
+
+.logo {
+  background: url('http://after.heap.fi/assets/pa_logo.svg');
+  height: 150px;
+  width: 150px;
+  display: inline-block;
+}
+
+.header h1 {
+  font-size: 60px;
+  font-weight: 300;
+  color: #e5cea8;
+}
+
+.footer {
+  padding: 40px 0 20px 0;
+  text-align: center;
+  color: #bbb;
+}
+
+.footer a {
+  color: #bbb;
 }

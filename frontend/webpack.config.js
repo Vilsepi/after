@@ -1,6 +1,6 @@
 const path               = require('path');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
-const DefinePlugin        = require('webpack/lib/DefinePlugin');
+const DefinePlugin       = require('webpack/lib/DefinePlugin');
 
 const ENV  = process.env.NODE_ENV = 'development';
 const HOST = process.env.HOST || 'localhost';
