@@ -23,7 +23,12 @@ uninteresting_venue_categories = [
     'Plaza',
     'Road',
     'Scenic Lookout',
-    'Shopping Mall',
     'Train Station',
     'Train'
 ]
+
+"""
+The following categories are problematic:
+- 'Shopping Mall' Several gastropubs are located in or near malls, e.g. Gastropub Stone's
+- 'Boat or Ferry' Some bars are stationary boats docked at a pier, e.g. Little Joe
+"""
