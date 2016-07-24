@@ -17,6 +17,7 @@ uninteresting_venue_categories = [
     'Coworking Space',
     'Field',
     'Flea Market',
+    'Fraternity House',
     'Grocery Store',
     'Gym',
     'Gym / Fitness Center',
@@ -36,16 +37,19 @@ uninteresting_venue_categories = [
     'Neighborhood',
     'Office',
     'Park',
+    'Parking',
     'Playground',
     'Plaza',
     'Road',
     'Scenic Lookout',
     'Soccer Field',
+    'Sorority House',
     'Spa',
     'Theme Park Ride / Attraction',
     'Train Station',
     'Train',
-    'Tram Station'
+    'Tram Station',
+    'University'
 ]
 
 """
