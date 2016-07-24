@@ -6,38 +6,10 @@ import json
 import datetime
 from collections import defaultdict
 import config
+import banlist
 
 s3 = boto3.resource('s3')
 simpledb = boto3.client('sdb')
-
-uninteresting_categories = [
-    'Art Gallery',
-    'Bath House',
-    'Beach',
-    'Boat or Ferry',
-    'Building',
-    'Church',
-    'City',
-    'College Residence Hall',
-    'Conference Room',
-    'Country',
-    'Field',
-    'Flea Market',
-    'Grocery Store',
-    'Harbor / Marina',
-    'Hostel',
-    'Hotel',
-    'Lawyer',
-    'Neighborhood',
-    'Office',
-    'Park',
-    'Plaza',
-    'Road',
-    'Scenic Lookout',
-    'Shopping Mall',
-    'Train Station',
-    'Train'
-]
 
 # Fetches latest checkins from a given geographical area
 def get_checkins(area_id):
@@ -79,7 +51,7 @@ def recommendable_venue(venue):
     if venue.get('primary_category','') == 'Nightlife Spot':
         return True
     for category in venue['categories']['items']:
-        if category['category_name'] in uninteresting_categories:
+        if category['category_name'] in banlist.uninteresting_venue_categories:
             print "Dropping venue {} {} due to secondary category {}".format(venue['venue_id'], venue['venue_name'], category['category_name'])
             return False
     return True
