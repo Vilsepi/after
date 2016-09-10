@@ -48,10 +48,13 @@ def filter_checkins(checkins):
 # Check venue categories to determine whether the venue is suitable
 # Note: primary_category can be null, categories list can be empty
 def recommendable_venue(venue):
-    if venue.get('primary_category','') == 'Nightlife Spot':
-        return True
+    if venue.get('venue_id') in banlist.blacklisted_venues:
+        return False
+    if venue.get('primary_category','') not in banlist.whitelisted_venue_primary_categories:
+        return False
     for category in venue['categories']['items']:
-        if category['category_name'] in banlist.uninteresting_venue_categories:
+        if category['category_name'] in banlist.blacklisted_venue_secondary_categories:
+            # TODO Forgive venues with bad secondary category if they also have Bar category_name
             print "Dropping venue {} {} due to secondary category {}".format(venue['venue_id'], venue['venue_name'], category['category_name'])
             return False
     return True

@@ -1,7 +1,15 @@
 
-uninteresting_venue_categories = [
-    'Art Gallery',
+whitelisted_venue_primary_categories = [
+    'Arts & Entertainment',
+    'Food',
+    'Nightlife Spot'
+]
+
+blacklisted_venue_secondary_categories = [
     'Auditorium',
+    'Arcade',
+    'Baby Store',
+    'Bakery',
     'Basketball Court',
     'Bath House',
     'Beach',
@@ -23,6 +31,7 @@ uninteresting_venue_categories = [
     'Gym / Fitness Center',
     'Gym Pool',
     'Harbor / Marina',
+    'Home (private)',
     'Hostel',
     'Hot Spring',
     'Hotel',
@@ -54,6 +63,11 @@ uninteresting_venue_categories = [
 
 """
 The following categories are problematic:
+- 'Art Gallery' Some bars are tagged also as galleries, e.g. Cafe Bar 9
 - 'Shopping Mall' Several gastropubs are located in or near malls, e.g. Gastropub Stone's
 - 'Boat or Ferry' Some bars are stationary boats docked at a pier, e.g. Little Joe
 """
+
+blacklisted_venues = [
+    '5319980' # iidan bilepalatsi
+]
