@@ -5,6 +5,19 @@ whitelisted_venue_primary_categories = [
     'Nightlife Spot'
 ]
 
+whitelisted_venue_secondary_categories = [
+    'Bar',
+    'Beach Bar',
+    'Beer Bar',
+    'Beer Garden',
+    'Cocktail Bar',
+    'Hotel Bar',
+    'Nightclub',
+    'Pub',
+    'Whisky Bar',
+    'Wine Bar'
+]
+
 blacklisted_venue_secondary_categories = [
     'Auditorium',
     'Arcade',
@@ -23,6 +36,7 @@ blacklisted_venue_secondary_categories = [
     'Convention Center',
     'Country',
     'Coworking Space',
+    'Dance Studio',
     'Field',
     'Flea Market',
     'Fraternity House',
@@ -54,6 +68,7 @@ blacklisted_venue_secondary_categories = [
     'Soccer Field',
     'Sorority House',
     'Spa',
+    'Theater',
     'Theme Park Ride / Attraction',
     'Train Station',
     'Train',
