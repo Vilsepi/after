@@ -108,6 +108,6 @@ if __name__ == '__main__':
     cachefile = sys.argv[1]
     venues = load_from_cache(cachefile)
 
-    #venues_with_wrong_primary_category(venues, remove)
-    #venues_specifically_blacklisted(venues, remove)
+    venues_with_wrong_primary_category(venues, remove)
+    venues_specifically_blacklisted(venues, remove)
     venues_with_bad_secondary_categories(venues, remove)

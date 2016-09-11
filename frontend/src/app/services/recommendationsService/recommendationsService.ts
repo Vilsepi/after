@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
-import {Recommendations} from '../recommendations/recommendations';
 
 @Injectable()
 export class RecommendationsService {
@@ -10,7 +9,7 @@ export class RecommendationsService {
 
     private recommendationsUrlPrefix = 'https://s3-eu-west-1.amazonaws.com/after.heap.fi/data/recommender-venues-';
 
-    getRecommendations(id: String): Observable<Recommendations> {
+    getRecommendations(id: String): Observable<Object> {
         return this.http.get(this.recommendationsUrlPrefix + id + '.json')
             .map(data => data.json());
     }
