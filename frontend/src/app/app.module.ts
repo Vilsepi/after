@@ -7,8 +7,7 @@ import { RouterModule } from '@angular/router';
 import ApplicationComponent from './components/application/app';
 import {RecommendedToday} from './components/recommendedToday/recommendedToday';
 import {ActivityFeed} from './components/activityFeed/activityFeed';
-import {RecommendationsService} from './services/recommendationsService/recommendationsService';
-import {ActivityFeedService} from './services/activityFeedService/activityFeedService';
+import {AFTER_SERVICES} from './services/services';
 
 @NgModule({
   imports: [
@@ -27,8 +26,7 @@ import {ActivityFeedService} from './services/activityFeedService/activityFeedSe
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    RecommendationsService,
-    ActivityFeedService
+    ...AFTER_SERVICES
   ],
   bootstrap: [ ApplicationComponent ]
 })

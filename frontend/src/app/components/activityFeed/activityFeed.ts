@@ -1,7 +1,7 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {Http} from '@angular/http';
 import {ActivatedRoute} from '@angular/router';
-import {ActivityFeedService} from '../../services/activityFeedService/activityFeedService';
+import {ActivityFeedService} from '../../services/activityFeedService';
 
 @Component({
     selector: 'activity-feed',
