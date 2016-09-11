@@ -5,8 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import ApplicationComponent from './components/application/app';
-import {RecommendedToday} from './components/recommendedToday/recommendedToday';
-import {ActivityFeed} from './components/activityFeed/activityFeed';
+import RecommendedToday from './components/recommendedToday/recommendedToday';
+import ActivityFeed from './components/activityFeed/activityFeed';
 import {AFTER_SERVICES} from './services/services';
 
 @NgModule({

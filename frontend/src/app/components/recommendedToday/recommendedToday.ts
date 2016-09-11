@@ -8,7 +8,7 @@ import {RecommendationsService} from '../../services/recommendationsService';
     styles: [require('./recommendedToday.css')],
     template: require('./recommendedToday.html')
 })
-export class RecommendedToday implements OnInit, OnDestroy {
+export default class RecommendedToday implements OnInit, OnDestroy {
     recommendations: Object;
     sub: any;
 

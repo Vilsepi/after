@@ -8,7 +8,7 @@ import {ActivityFeedService} from '../../services/activityFeedService';
     styles: [require('./activityFeed.css')],
     template: require('./activityFeed.html'),
 })
-export class ActivityFeed implements OnInit, OnDestroy {
+export default class ActivityFeed implements OnInit, OnDestroy {
     checkins: Array<Object>;
     sub: any;
 
