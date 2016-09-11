@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 whitelisted_venue_primary_categories = [
     'Arts & Entertainment',
@@ -21,6 +23,7 @@ whitelisted_venue_secondary_categories = [
 blacklisted_venue_secondary_categories = [
     'Auditorium',
     'Arcade',
+    'Art Gallery',
     'Baby Store',
     'Bakery',
     'Basketball Court',
@@ -40,6 +43,7 @@ blacklisted_venue_secondary_categories = [
     'Field',
     'Flea Market',
     'Fraternity House',
+    'General Entertainment',
     'Grocery Store',
     'Gym',
     'Gym / Fitness Center',
@@ -89,4 +93,5 @@ The following categories are problematic:
 
 blacklisted_venues = [
     '5319980' # iidan bilepalatsi
+    '2117217', # Ohrajyvä, not the correct one
 ]
