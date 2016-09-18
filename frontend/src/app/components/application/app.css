@@ -1,5 +1,5 @@
 .header {
-  background: #2a395e;
+  background: #343F68;
   padding: 40px 20px 20px 20px;
   text-align: center;
   text-transform: uppercase;
@@ -10,6 +10,11 @@
   margin: 3px 10px;
 }
 
+.btn-default {
+  background: none;
+  color: #fff;
+}
+
 .logo {
   background: url('http://after.heap.fi/assets/pa_logo.svg');
   height: 150px;
@@ -18,7 +23,16 @@
   vertical-align: middle;
 }
 
-.header h1 {
+.logo-small {
+  height: 75px;
+  width: 75px;
+}
+
+.mobile-title {
+  font-size: 32px;
+}
+
+h1 {
   font-size: 60px;
   font-weight: 300;
   color: #e5cea8;
@@ -26,7 +40,7 @@
 }
 
 .footer {
-  padding: 40px 0 20px 0;
+  padding: 0px 0 20px 0;
   text-align: center;
   color: #bbb;
 }

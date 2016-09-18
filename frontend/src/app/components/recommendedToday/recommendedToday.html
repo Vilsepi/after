@@ -1,26 +1,48 @@
 <div class="container wrapper">
+  <div class="row">
 
-  <div class="row venue" *ngFor='let venue of recommendations?.recommendations'>
+    <!-- LEFT COLUMN -->
+    <div class="col-sm-12 col-md-7">
 
-    <div class="col-sm-12">
-      <img class="venue-icon" src="{{ venue.venue.venue_icon.sm }}">
-      <span>
-        <h2><a href="{{ venue.venue.foursquare.foursquare_url }}">{{ venue.venue.venue_name }}</a></h2>
-        <div class="tag" *ngFor='let category of venue.venue.categories.items'>
-        {{ category.category_name }}
+      <div class="row venue" *ngFor='let venue of recommendations?.recommendations'>
+
+        <div class="col-sm-12">
+          <img class="venue-icon" src="{{ venue.venue.venue_icon.sm }}">
+
+          <h2><a href="{{ venue.venue.foursquare.foursquare_url }}">{{ venue.venue.venue_name }}</a></h2>
+
+          <div class="tag-cluster">
+            <div class="tag" *ngFor='let category of venue.venue.categories.items'>
+            {{ category.category_name }}
+            </div>
+          </div>
+
         </div>
-      </span>
-    </div>
 
-    <div class="col-sm-12 beer-list">
-      <div class="beer" *ngFor='let beer of venue.venue.top_beers.items.slice(0,4)'>
-        <b>{{ beer.beer.beer_name }}</b> {{ beer.beer.beer_abv }}% {{ beer.beer.rating_score|number:'1.1-1' }}/5.0
-        <span class="beer-details">{{ beer.brewery.brewery_name }}<br>{{ beer.beer.beer_style }}</span>
+        <div class="col-sm-4 offset-sm-4 beer-list">
+          <div class="beer" *ngFor='let beer of venue.venue.top_beers.items.slice(0,4)'>
+            <b>{{ beer.beer.beer_name }}</b> {{ beer.beer.beer_abv }}% {{ beer.beer.rating_score|number:'1.1-1' }}/5.0
+            <span class="beer-details">{{ beer.brewery.brewery_name }}<br>{{ beer.beer.beer_style }}</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="row recommendations-footer">
-    <p>ehdotukset päivitetty {{ recommendations?.recommendations_updated }}</p>
+      <div class="row recommendations-footer">
+        <p>ehdotukset päivitetty {{ recommendations?.recommendations_updated | date: 'd.M. H:m' }}</p>
+      </div>
+
+
+    </div>
+    <!-- RIGHT COLUMN -->
+    <div class="col-sm-12 col-md-4 col-md-offset-1 feed">
+
+      <div class="row feed-venue" *ngFor='let checkin of checkins'>
+        <h3>{{ checkin.venue.venue_name }}</h3>
+        <b>{{ checkin.beer.beer_name }}</b> {{ checkin.beer.beer_abv }}%
+        <p>{{ checkin?.checkin_comment }}</p>
+        <span class="feed-timestamp">{{ checkin.created_at | date: 'd.M. H:m' }} {{ checkin.user.user_name }}</span>
+      </div>
+
+
   </div>
 </div>

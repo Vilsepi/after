@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 
 import ApplicationComponent from './components/application/app';
 import RecommendedToday from './components/recommendedToday/recommendedToday';
-import ActivityFeed from './components/activityFeed/activityFeed';
 import {AFTER_SERVICES} from './services/services';
 
 @NgModule({
@@ -14,15 +13,13 @@ import {AFTER_SERVICES} from './services/services';
     BrowserModule,
     HttpModule,
     RouterModule.forRoot([
-        {path: '', redirectTo: '/recommendations/tampere', pathMatch: 'full'},
-        {path: 'recommendations/:city', component: RecommendedToday},
-        {path: 'feed/:city', component: ActivityFeed}
+        {path: '', redirectTo: '/cities/tampere', pathMatch: 'full'},
+        {path: 'cities/:city', component: RecommendedToday}
     ])
   ],
   declarations: [
       ApplicationComponent,
-      RecommendedToday,
-      ActivityFeed
+      RecommendedToday
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

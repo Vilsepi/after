@@ -2,20 +2,31 @@
 }
 
 .venue-icon {
-  float: left;
-  margin-right: 15px;
+  /*float: left;
+  margin-right: 15px;*/
+  display: block;
+  margin: 0 auto;
+  opacity: 0.4;
 }
 
 .venue {
   margin-bottom: 30px;
+  border: 1px solid #eee;
 }
 
 h2 {
-  margin: 0;
+  text-align: center;
+  margin: 15px 0 5px 0;
 }
 
 h2 a {
   color: #2a395e;
+}
+
+h3 {
+  color: #2a395e;
+  font-size: 18px;
+  margin: 0;
 }
 
 .beer-list {
@@ -33,12 +44,17 @@ h2 a {
   line-height: 1.1em;
 }
 
+.tag-cluster {
+  text-align: center;
+  margin: 0 auto;
+}
+
 .tag {
   display: inline-block;
   height: 26px;
   padding: 0 6px;
   margin: 2px 2px;
-  color: #666;
+  color: #777;
   text-align: center;
   font-size: 10px;
   font-weight: 600;
@@ -47,13 +63,32 @@ h2 a {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  background-color: #f4f4f4;
-  border-radius: 6px;
-  border: 1px solid #eee;
-  box-sizing: border-box;
+  background-color: #f6f6f6;
+  border-radius: 3px;
+  border: 1px solid #f0f0f0;
+  /*box-sizing: border-box;*/
 }
 
 .recommendations-footer {
   text-align: center;
   color: #bbb;
+}
+
+
+.feed-venue {
+  font-size: 1.2em;
+  padding: 0 10px;
+  margin-bottom: 12px;
+}
+
+p {
+  font-style: italic;
+  line-height: 1.2em;
+  margin-bottom: -5px;
+  padding: 0;
+}
+
+.feed-timestamp {
+  opacity: 0.4;
+  font-size: 0.8em;
 }
