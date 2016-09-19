@@ -28,7 +28,7 @@
       </div>
 
       <div class="row recommendations-footer">
-        <p>ehdotukset päivitetty {{ recommendations?.recommendations_updated | date: 'd.M. H:m' }}</p>
+        <p>ehdotukset päivitetty {{ recommendations?.recommendations_updated | date: 'd.M. HH:mm' }}</p>
       </div>
 
 
@@ -40,7 +40,7 @@
         <h3>{{ checkin.venue.venue_name }}</h3>
         <b>{{ checkin.beer.beer_name }}</b> {{ checkin.beer.beer_abv }}%
         <p>{{ checkin?.checkin_comment }}</p>
-        <span class="feed-timestamp">{{ checkin.created_at | date: 'd.M. H:m' }} {{ checkin.user.user_name }}</span>
+        <span class="feed-timestamp">{{ checkin.created_at | date: 'd.M. HH:mm' }} {{ checkin.user.user_name }}</span>
       </div>
 
 
