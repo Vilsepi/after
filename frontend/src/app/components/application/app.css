@@ -6,12 +6,26 @@
   margin-bottom: 50px;
 }
 
+/* Mobile-optimized */
+@media screen and (max-width: 768px){
+  .header {
+    padding: 0 10px 15px 10px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+}
+
 .btn-group {
   margin: 3px 10px;
 }
 
 .btn-default {
   background: none;
+  border-radius: 3px;
   color: #fff;
 }
 
@@ -23,14 +37,6 @@
   vertical-align: middle;
 }
 
-.logo-small {
-  height: 75px;
-  width: 75px;
-}
-
-.mobile-title {
-  font-size: 32px;
-}
 
 h1 {
   font-size: 60px;

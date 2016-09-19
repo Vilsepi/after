@@ -19,7 +19,7 @@
 
         </div>
 
-        <div class="col-sm-4 offset-sm-4 beer-list">
+        <div class="col-sm-8 col-sm-offset-2 beer-list">
           <div class="beer" *ngFor='let beer of venue.venue.top_beers.items.slice(0,4)'>
             <b>{{ beer.beer.beer_name }}</b> {{ beer.beer.beer_abv }}% {{ beer.beer.rating_score|number:'1.1-1' }}/5.0
             <span class="beer-details">{{ beer.brewery.brewery_name }}<br>{{ beer.beer.beer_style }}</span>
@@ -28,14 +28,16 @@
       </div>
 
       <div class="row recommendations-footer">
-        <p>ehdotukset päivitetty {{ recommendations?.recommendations_updated | date: 'd.M. HH:mm' }}</p>
+        <span>ehdotukset päivitetty {{ recommendations?.recommendations_updated | date: 'd.M. HH:mm' }}</span>
       </div>
 
 
     </div>
     <!-- RIGHT COLUMN -->
-    <div class="col-sm-12 col-md-4 col-md-offset-1 feed">
-
+    <div class="col-sm-12 col-md-4 col-md-offset-1">
+      <div class="row">
+        <h3 class="feed-title">Viimeisimmät kirjaukset</h3>
+      </div>
       <div class="row feed-venue" *ngFor='let checkin of checkins'>
         <h3>{{ checkin.venue.venue_name }}</h3>
         <b>{{ checkin.beer.beer_name }}</b> {{ checkin.beer.beer_abv }}%
