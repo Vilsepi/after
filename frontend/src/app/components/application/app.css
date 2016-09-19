@@ -1,12 +1,14 @@
+@import 'https://fonts.googleapis.com/css?family=Lato:300';
+
 .header {
-  background: #343F68;
+  background: #2a395e;
   padding: 40px 20px 20px 20px;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 50px;
 }
 
-/* Mobile-optimized */
+/* Mobile */
 @media screen and (max-width: 768px){
   .header {
     padding: 0 10px 15px 10px;
@@ -15,7 +17,14 @@
   }
 
   .header h1 {
-    font-size: 24px;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .header .btn {
+    border-radius: 6px;
+    border-width: 1px;
+    font-weight: normal;
   }
 }
 
@@ -23,11 +32,32 @@
   margin: 3px 10px;
 }
 
+.btn {
+  border-radius: 7px;
+  border-width: 2px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 20px;
+}
+
 .btn-default {
   background: none;
-  border-radius: 3px;
-  color: #fff;
+  border-color: #e5cea8;
+  color: #e5cea8;
 }
+
+.btn-default:hover {
+  background: #e5cea8;
+  border-color: #e5cea8;
+  color: #2a395e;
+}
+
+.btn-default:focus {
+  color: #2a395e;
+  background: #e5cea8;
+  border-color: #e5cea8;
+}
+
 
 .logo {
   background: url('http://after.heap.fi/assets/pa_logo.svg');
@@ -35,12 +65,14 @@
   width: 150px;
   display: inline-block;
   vertical-align: middle;
+  margin: 0 20px;
 }
-
 
 h1 {
   font-size: 60px;
   font-weight: 300;
+  font-family: 'Lato', sans-serif;
   color: #e5cea8;
-  margin-bottom: 30px
+  margin-bottom: 30px;
+  letter-spacing: 2px;
 }
