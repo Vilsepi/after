@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Lato:300';
 
 .header {
-  background: #2a395e;
+  background: #1e2d4e;
   padding: 40px 20px 20px 20px;
   text-align: center;
   text-transform: uppercase;
@@ -22,7 +22,7 @@
   }
 
   .header .btn {
-    border-radius: 6px;
+    border-radius: 5px;
     border-width: 1px;
     font-weight: normal;
   }
@@ -38,26 +38,30 @@
   font-size: 14px;
   font-weight: bold;
   padding: 12px 20px;
+  letter-spacing: 1px;
 }
 
 .btn-default {
   background: none;
-  border-color: #e5cea8;
-  color: #e5cea8;
+  border-color: #edda98;
+  color: #edda98;
 }
 
 .btn-default:hover {
-  background: #e5cea8;
-  border-color: #e5cea8;
-  color: #2a395e;
+  background: #edda98;
+  border-color: #edda98;
+  color: #1e2d4e;
 }
 
 .btn-default:focus {
-  color: #2a395e;
-  background: #e5cea8;
-  border-color: #e5cea8;
+  color: #1e2d4e;
+  background: #edda98;
+  border-color: #edda98;
 }
 
+.btn-group .btn + .btn {
+  margin-left: -2px;
+}
 
 .logo {
   background: url('http://after.heap.fi/assets/pa_logo.svg');
@@ -72,7 +76,7 @@ h1 {
   font-size: 60px;
   font-weight: 300;
   font-family: 'Lato', sans-serif;
-  color: #e5cea8;
+  color: #edda98;
   margin-bottom: 30px;
   letter-spacing: 2px;
 }
