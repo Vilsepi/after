@@ -2,21 +2,19 @@
 }
 
 .venue-icon {
-  /*float: left;
-  margin-right: 15px;*/
   display: block;
   margin: 0 auto;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
 .venue {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 h2 {
   font-family: 'Lato', sans-serif;
   text-align: center;
-  margin: 25px 0 5px 0;
+  margin: 5px 0 3px 0;
 }
 
 h2 a {
@@ -30,7 +28,7 @@ h3 {
 }
 
 .beer-list {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .beer {
@@ -78,13 +76,12 @@ h3 {
 
 .feed-title {
   margin-bottom: 20px;
-  padding: 0 10px;
 }
 
 .feed-venue {
   font-size: 1.2em;
-  margin-bottom: 12px;
-  padding: 0 10px
+  margin-bottom: 20px;
+  /*padding: 0 10px*/
 }
 
 p {
@@ -95,6 +92,17 @@ p {
 }
 
 .feed-timestamp {
-  opacity: 0.4;
+  color: #bbb;
   font-size: 0.8em;
+  line-height: 1.0em;
+  text-align: right;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px){
+  .feed-timestamp {
+    text-align: left;
+    margin-bottom: 3px;
+  }
+
 }

@@ -2,11 +2,11 @@
   <div class="row">
 
     <!-- LEFT COLUMN -->
-    <div class="col-sm-12">
+    <div class="col-xs-12">
 
       <div class="row venue" *ngFor='let venue of recommendations?.recommendations'>
 
-        <div class="col-sm-12">
+        <div class="col-xs-12">
           <img class="venue-icon" src="{{ venue.venue.venue_icon.sm }}">
 
           <h2><a href="{{ venue.venue.foursquare.foursquare_url }}">{{ venue.venue.venue_name }}</a></h2>
@@ -19,7 +19,7 @@
 
         </div>
 
-        <div class="col-sm-8 col-sm-offset-2 beer-list">
+        <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 beer-list">
           <div class="beer" *ngFor='let beer of venue.venue.top_beers.items.slice(0,4)'>
             <b>{{ beer.beer.beer_name }}</b> {{ beer.beer.beer_abv }}% {{ beer.beer.rating_score|number:'1.1-1' }}/5.0
             <span class="beer-details">{{ beer.brewery.brewery_name }}<br>{{ beer.beer.beer_style }}</span>
@@ -34,17 +34,21 @@
 
     </div>
     <!-- RIGHT COLUMN -->
-    <div class="col-sm-12">
+    <div class="col-xs-12">
       <div class="row">
-        <h3 class="feed-title">Viimeisimmät kirjaukset</h3>
+        <h2 class="feed-title">Viimeisimmät kirjaukset</h2>
       </div>
       <div class="row feed-venue" *ngFor='let checkin of checkins'>
-        <h3>{{ checkin.venue.venue_name }}</h3>
-        <b>{{ checkin.beer.beer_name }}</b> {{ checkin.beer.beer_abv }}%
-        <p>{{ checkin?.checkin_comment }}</p>
-        <span class="feed-timestamp">{{ checkin.created_at | date: 'd.M. HH:mm' }} {{ checkin.user.user_name }}</span>
+        <div class="col-sm-2 col-lg-3 feed-timestamp">
+          {{ checkin.created_at | date: 'd.M. HH:mm' }}<br class="hidden-xs">
+          {{ checkin.user.user_name }}
+        </div>
+        <div class="col-sm-10 col-lg-6">
+          <h3>{{ checkin.venue.venue_name }}</h3>
+          <b>{{ checkin.beer.beer_name }}</b> {{ checkin.beer.beer_abv }}%
+          <p>{{ checkin?.checkin_comment }}</p>
+        </div>
       </div>
-
 
   </div>
 </div>
