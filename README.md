@@ -15,14 +15,16 @@ Code contributions and issue reports are welcome. For code contributions: fork, 
 
 ## Roadmap
 
-- Show no rating if beer rating is 0
-- Do not recommend a venue that has no beers to recommend
-- Show distance to venue from user's current location
-- Show a treasure map of the night for brave adventurers
-- :heavy_check_mark: Split recommendations and latest checkins ("nearby activity") into separate views
-- :heavy_check_mark: For recommended beers, show the global rating instead of the rating of a single person in the latest checkin
-- :heavy_check_mark: Filter recommended venues by category (only show bars, pubs, restaurants) in the backend, instead of banning venues one-by-one in the frontend
-- :heavy_check_mark: Instead of basing recommendations on randomly picked latest checkins, first pick bars and then fetch top-rated beers there
+- [ ] Do not recommend a venue that has no beers to recommend (Or at least pad the recommended beers from the checkins of the venue)
+- [ ] Switch to whitelisting categories. Currently there's way too many cafes and restaurants which are not suitable for afterwork.
+- [ ] Add a radar which shows where afterwork is active (if several people have checked in lately in the same venue)
+- [ ] Show no rating if beer rating is 0
+- [ ] Show distance to venue from user's current location
+- [ ] Show a treasure map of the night for brave adventurers
+- [x] Split recommendations and latest checkins ("nearby activity") into separate views
+- [x] For recommended beers, show the global rating instead of the rating of a single person in the latest checkin
+- [x] Filter recommended venues by category (only show bars, pubs, restaurants) in the backend, instead of banning venues one-by-one in the frontend
+- [x] Instead of basing recommendations on randomly picked latest checkins, first pick bars and then fetch top-rated beers there
 
 ## License and attribution
 
