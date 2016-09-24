@@ -21,7 +21,6 @@ Code contributions and issue reports are welcome. For code contributions: fork, 
 - [ ] Show no rating if beer rating is 0
 - [ ] Show distance to venue from user's current location
 - [ ] Show a treasure map of the night for brave adventurers
-- [x] Split recommendations and latest checkins ("nearby activity") into separate views
 - [x] For recommended beers, show the global rating instead of the rating of a single person in the latest checkin
 - [x] Filter recommended venues by category (only show bars, pubs, restaurants) in the backend, instead of banning venues one-by-one in the frontend
 - [x] Instead of basing recommendations on randomly picked latest checkins, first pick bars and then fetch top-rated beers there
