@@ -56,28 +56,19 @@ def venues_with_bad_secondary_categories(venues, remove):
     removable_venues = []
     for venue in venues:
         venueset = set([item['category_name'] for item in venue['categories']['items']])
-        blacklisted = venueset.intersection(banlist.blacklisted_venue_secondary_categories)
         whitelisted = venueset.intersection(banlist.whitelisted_venue_secondary_categories)
 
-        if blacklisted and not whitelisted:
+        if not whitelisted:
             print_decision(venue, 'delete')
             removable_venues.append({'Name': str(venue['venue_id'])})
-        elif blacklisted and whitelisted:
-            print_decision(venue, 'forgive')
-        elif not blacklisted and whitelisted:
-            #print_decision(venue, 'ok')
-            pass
-        else:
-            #print_decision(venue, 'unknown')
-            pass
 
-    print "Count", len(removable_venues)
+    print "Count: {} removable, {} spared".format(len(removable_venues), len(venues))
 
     if remove:
         batch_remove(removable_venues)
 
 def print_decision(venue, decision):
-    print u'{:20}{:9} {:40} {:8} {}'.format(venue['primary_category'], venue['venue_id'], venue['venue_name'], decision, stringify_categories(venue))
+    print u'{:20} {:6} {:8} {:40} {}'.format(venue['primary_category'], decision, venue['venue_id'], venue['venue_name'], stringify_categories(venue))
 
 def stringify_categories(venue):
     string = ""
@@ -108,6 +99,6 @@ if __name__ == '__main__':
     cachefile = sys.argv[1]
     venues = load_from_cache(cachefile)
 
-    venues_with_wrong_primary_category(venues, remove)
+    #venues_with_wrong_primary_category(venues, remove)
     venues_specifically_blacklisted(venues, remove)
     venues_with_bad_secondary_categories(venues, remove)

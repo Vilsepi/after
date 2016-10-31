@@ -49,23 +49,17 @@ def filter_checkins(checkins):
 # Note: primary_category can be null, categories list can be empty
 def recommendable_venue(venue):
     if venue.get('venue_id') in banlist.blacklisted_venues:
-        print "Skipping venue {} {} as it is blacklisted".format(venue['venue_id'], venue['venue_name'])
-        return False
-
-    if venue.get('primary_category','') not in banlist.whitelisted_venue_primary_categories:
-        print "Skipping venue {} {} as its primary category is {}".format(venue['venue_id'], venue['venue_name'], venue.get('primary_category',''))
+        print "Skipping blacklisted venue {} {}".format(venue['venue_id'], venue['venue_name'])
         return False
 
     venueset = set([item['category_name'] for item in venue['categories']['items']])
-    blacklisted = venueset.intersection(banlist.blacklisted_venue_secondary_categories)
     whitelisted = venueset.intersection(banlist.whitelisted_venue_secondary_categories)
 
-    if blacklisted and not whitelisted:
-        print "Skipping venue {} {}, blacklisted {}".format(venue['venue_id'], venue['venue_name'], blacklisted)
-        return False
-    elif blacklisted and whitelisted:
-        print "Forgiving venue {} {}, whitelisted {}, blacklisted {}".format(venue['venue_id'], venue['venue_name'], whitelisted, blacklisted)
-    return True
+    if whitelisted:
+        return True
+
+    print "Skipping venue {} {} due to its categories".format(venue['venue_id'], venue['venue_name'])
+    return False
 
 # Writes items to SimpleDB
 def simpledb_put(items, domain, area_id):
