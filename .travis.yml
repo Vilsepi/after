@@ -11,10 +11,5 @@ before_install:
 install:
   - npm install
 
-before_script:
-  # Enable virtual screen to run karma browser tests
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
 script:
   - npm run build
