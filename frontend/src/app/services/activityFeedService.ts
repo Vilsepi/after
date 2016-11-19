@@ -7,7 +7,7 @@ export class ActivityFeedService {
 
     constructor(private http: Http) { }
 
-    private feedUrlPrefix = 'https://s3-eu-west-1.amazonaws.com/after.heap.fi/data/fetcher-checkins-';
+    private feedUrlPrefix = 'http://after.heap.fi/data/fetcher-checkins-';
 
     getLatestCheckins(city: String): Observable<Object[]> {
         return this.http.get(this.feedUrlPrefix + city + '.json')

@@ -7,7 +7,7 @@ export class RecommendationsService {
   
     constructor(private http: Http) { }
 
-    private recommendationsUrlPrefix = 'https://s3-eu-west-1.amazonaws.com/after.heap.fi/data/recommender-venues-';
+    private recommendationsUrlPrefix = 'http://after.heap.fi/data/recommender-venues-';
 
     getRecommendations(id: String): Observable<Object> {
         return this.http.get(this.recommendationsUrlPrefix + id + '.json')
