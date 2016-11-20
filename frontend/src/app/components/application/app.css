@@ -66,6 +66,12 @@
   border-color: #edda98;
 }
 
+.is-active {
+  color: #1e2d4e;
+  background: #edda98;
+  border-color: #edda98;
+}
+
 h1 {
   font-size: 60px;
   font-weight: 300;
