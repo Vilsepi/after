@@ -1,14 +1,10 @@
-<div class="header container-fluid">
-  <h1>Päivän <div class="logo hidden-xs"></div> afteri</h1>
+<div class="header">
+  <h1>Päivän <div class="logo"></div> afteri</h1>
 
-  <div class="btn-group" role="group">
-    <a class="btn btn-default" [routerLink]="['/cities/tampere']">Tampere</a>
-    <a class="btn btn-default" [routerLink]="['/cities/helsinki']">Helsinki</a>
+  <div class="button-group">
+    <a class="button" [routerLink]="['/cities/tampere']">Tampere</a>
+    <a class="button" [routerLink]="['/cities/helsinki']">Helsinki</a>
   </div>
-
 </div>
 
-<div>
 <router-outlet></router-outlet>
-</div>
-<div>

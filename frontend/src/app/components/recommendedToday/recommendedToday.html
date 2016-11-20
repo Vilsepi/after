@@ -1,57 +1,45 @@
-<div class="container-fluid wrapper">
+<div class="container">
 
   <!-- Suggestions -->
-  <div class="row">
+  <div class="row venue" *ngFor='let venue of recommendations?.recommendations'>
 
-    <div class="col-xs-12 col-lg-4 venue" *ngFor='let venue of recommendations?.recommendations'>
+    <img class="venue-icon" src="{{ venue.venue.venue_icon.sm }}">
 
-      <div class="col-xs-12">
-        <img class="venue-icon" src="{{ venue.venue.venue_icon.sm }}">
+    <h2><a href="{{ venue.venue.foursquare.foursquare_url }}">{{ venue.venue.venue_name }}</a></h2>
 
-        <h2><a href="{{ venue.venue.foursquare.foursquare_url }}">{{ venue.venue.venue_name }}</a></h2>
-
-        <div class="tag-cluster">
-          <div class="tag" *ngFor='let category of venue.venue.categories.items'>
-          {{ category.category_name }}
-          </div>
-        </div>
-
+    <div class="tag-cluster">
+      <div class="tag" *ngFor='let category of venue.venue.categories.items'>
+      {{ category.category_name }}
       </div>
+    </div>
 
-      <div class="col-md-10 col-md-offset-1 beer-list">
-        <div class="beer" *ngFor='let beer of venue.venue.top_beers.items.slice(0,10)'>
-          <b>{{ beer.beer.beer_name }}</b> {{ beer.beer.beer_abv }}% {{ beer.beer.rating_score|number:'1.1-1' }}/5.0
-          <span class="beer-details">{{ beer.brewery.brewery_name }}<br>{{ beer.beer.beer_style }}</span>
-        </div>
+    <div class="beer-list">
+      <div class="beer" *ngFor='let beer of venue.venue.top_beers.items.slice(0,10)'>
+        <b>{{ beer.beer.beer_name }}</b> {{ beer.beer.beer_abv }}% {{ beer.beer.rating_score|number:'1.1-1' }}/5.0
+        <span class="beer-details">{{ beer.brewery.brewery_name }}<br>{{ beer.beer.beer_style }}</span>
       </div>
-    
     </div>
 
   </div>
+
 
   <div class="row recommendations-footer">
     <span>ehdotukset päivitetty {{ recommendations?.recommendations_updated | date: 'd.M. HH:mm' }}</span>
   </div>
 
+
   <!-- Activity -->
   <div class="row">
-
-    <div class="col-xs-12">
-      <h2 class="feed-title">Viimeisimmät kirjaukset</h2>
-    </div>
+    <h2 class="feed-title">Viimeisimmät kirjaukset</h2>
+  </div>
     
-    <div class="col-xs-12 feed-venue" *ngFor='let checkin of checkins'>
-      <div class="col-sm-2 col-lg-3 col-lg-offset-1 feed-timestamp">
-        {{ checkin.created_at | date: 'd.M. HH:mm' }}<br class="hidden-xs">
-        {{ checkin.user.user_name }}
-      </div>
-      <div class="col-sm-10 col-lg-5">
-        <h3>{{ checkin.venue.venue_name }}</h3>
-        <b>{{ checkin.beer.beer_name }}</b> {{ checkin.beer.beer_abv }}%
-        <p>{{ checkin?.checkin_comment }}</p>
-      </div>
-    </div>
-
+  <div class="row feed-venue" *ngFor='let checkin of checkins'>
+    <h3>{{ checkin.venue.venue_name }}</h3>
+    <b>{{ checkin.beer.beer_name }}</b> {{ checkin.beer.beer_abv }}%
+    <p>{{ checkin?.checkin_comment }}</p>
+    <span class="feed-timestamp">
+      {{ checkin.created_at | date: 'd.M. HH:mm' }} {{ checkin.user.user_name }}
+    </span>
   </div>
 
 </div>

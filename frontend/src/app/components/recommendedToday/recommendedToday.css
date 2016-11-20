@@ -1,24 +1,29 @@
-.wrapper {
+.container {
+  max-width: 600px;
 }
 
 .venue-icon {
   display: block;
   margin: 0 auto;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 .venue {
-  margin-bottom: 40px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 2px solid #f0f0f0;
 }
 
 h2 {
   font-family: 'Lato', sans-serif;
   text-align: center;
-  margin: 5px 0 3px 0;
+  margin: 10px 0 10px 0;
 }
 
 h2 a {
   color: #2a395e;
+  text-decoration: none;
 }
 
 h3 {
@@ -28,7 +33,7 @@ h3 {
 }
 
 .beer-list {
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .beer {
@@ -38,7 +43,6 @@ h3 {
 
 .beer-details {
   display: block;
-  opacity: 0.6;
   margin-top: -2px;
   line-height: 1.2em;
 }
@@ -51,30 +55,28 @@ h3 {
 .tag {
   display: inline-block;
   height: 26px;
-  padding: 0 6px;
-  margin: 2px 2px;
-  color: #777;
-  text-align: center;
+  padding: 0 10px;
+  margin: 2px 4px;
+  color: #2a395e;
+  line-height: 26px;
   font-size: 10px;
   font-weight: 300;
-  line-height: 26px;
   letter-spacing: .1rem;
+  text-align: center;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  background-color: #fafafa;
   border-radius: 3px;
-  border: 1px solid #efefef;
+  border: 1px solid #2a395e;
 }
 
 .recommendations-footer {
   text-align: center;
-  color: #bbb;
-  margin-bottom: 50px;
+  color: #ddd;
 }
 
 .feed-title {
-  margin: 30px 0 20px 0;
+  margin: 100px 0 20px 0;
 }
 
 .feed-venue {

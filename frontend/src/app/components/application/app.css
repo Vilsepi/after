@@ -2,18 +2,27 @@
 
 .header {
   background: #1e2d4e;
-  padding: 40px 20px 20px 20px;
+  padding: 20px;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  background: url('http://after.heap.fi/assets/pa_logo_2.svg');
+  height: 150px;
+  width: 150px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 20px;
 }
 
 /* Mobile */
 @media screen and (max-width: 768px){
   .header {
-    padding: 0 10px 15px 10px;
+    padding: 20px 10px 15px 10px;
     text-transform: uppercase;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
   .header h1 {
@@ -26,50 +35,35 @@
     border-width: 1px;
     font-weight: normal;
   }
+
+  .logo {
+    display: none;
+    background: none;
+  }
 }
 
-.btn-group {
-  margin: 3px 10px;
-}
-
-.btn {
-  border-radius: 7px;
+.button {
+  border-radius: 6px;
   border-width: 2px;
   font-size: 14px;
   font-weight: bold;
-  padding: 12px 20px;
+  height: 48px;
+  padding-top: 4px;
   letter-spacing: 1px;
-}
-
-.btn-default {
-  background: none;
   border-color: #edda98;
   color: #edda98;
 }
 
-.btn-default:hover {
+.button:hover {
   background: #edda98;
   border-color: #edda98;
   color: #1e2d4e;
 }
 
-.btn-default:focus {
+.button:focus {
   color: #1e2d4e;
   background: #edda98;
   border-color: #edda98;
-}
-
-.btn-group .btn + .btn {
-  margin-left: -2px;
-}
-
-.logo {
-  background: url('http://after.heap.fi/assets/pa_logo_2.svg');
-  height: 150px;
-  width: 150px;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 20px;
 }
 
 h1 {
