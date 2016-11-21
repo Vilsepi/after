@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import ApplicationComponent from './components/application/app';
+import Footer from './components/footer/footer';
 import RecommendedToday from './components/recommendedToday/recommendedToday';
 import {AFTER_SERVICES} from './services/services';
 
@@ -19,6 +20,7 @@ import {AFTER_SERVICES} from './services/services';
   ],
   declarations: [
       ApplicationComponent,
+      Footer,
       RecommendedToday
   ],
   providers: [
