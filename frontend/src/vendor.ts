@@ -10,3 +10,5 @@ import '@angular/router';
 import 'rxjs/add/operator/map';
 
 // Other vendor libraries
+import 'skeleton-css/css/normalize.css';
+import 'skeleton-css/css/skeleton.css';
