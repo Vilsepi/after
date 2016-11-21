@@ -15,6 +15,7 @@ Code contributions and issue reports are welcome. For code contributions: fork, 
 
 ## Roadmap
 
+- [ ] Deploy compressed items and add Content-Encoding header
 - [ ] Do not recommend a venue that has no beers to recommend (or at least pad the recommended beers from the checkins of the venue)
 - [ ] Add a radar which shows where afterwork is active (if several people have checked in lately in the same venue)
 - [ ] Prettify ratings (show no rating if beer rating is 0)
