@@ -1,7 +1,7 @@
 <div class="container">
 
   <!-- Suggestions -->
-  <div class="row venue" *ngFor='let venue of recommendations?.recommendations'>
+  <div class="row card" *ngFor='let venue of recommendations?.recommendations'>
 
     <img class="venue-icon" src="{{ venue.venue.venue_icon.sm }}">
 
@@ -29,17 +29,18 @@
 
 
   <!-- Activity -->
-  <div class="row">
+  <div class="row card card-no-pad">
     <h2 class="feed-title">Viimeisimmät kirjaukset</h2>
-  </div>
-    
-  <div class="row feed-venue" *ngFor='let checkin of checkins'>
-    <h3>{{ checkin.venue.venue_name }}</h3>
-    <b>{{ checkin.beer.beer_name }}</b> {{ checkin.beer.beer_abv }}%
-    <p>{{ checkin?.checkin_comment }}</p>
-    <span class="feed-timestamp">
-      {{ checkin.created_at | date: 'd.M. HH:mm' }} {{ checkin.user.user_name }}
-    </span>
+      
+    <div class="feed-venue" *ngFor='let checkin of checkins'>
+      <h3>{{ checkin.venue.venue_name }}</h3>
+      <b>{{ checkin.beer.beer_name }}</b> {{ checkin.beer.beer_abv }}%
+      <p>{{ checkin?.checkin_comment }}</p>
+      <span class="feed-timestamp">
+        {{ checkin.created_at | date: 'd.M. HH:mm' }} {{ checkin.user.user_name }}
+      </span>
+    </div>
+
   </div>
 
 </div>
