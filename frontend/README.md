@@ -1,7 +1,7 @@
 
 ## Prerequisites
 
-- Node.js and npm (tested on 6.5.0 and 3.10.7 respectively)
+- Node.js and npm (tested on 7.2.0 and 4.0.5 respectively)
 
 ## Develop
 
