@@ -1,0 +1,17 @@
+
+remote = {
+  'client_id': '',
+  'client_secret': '',
+  'base_url': ''
+}
+
+storage = {
+  'table_beer': '',
+  'table_venue': '',
+  'bucket_name': ''
+}
+
+areas = [
+  'tampere',
+  'helsinki'
+]
