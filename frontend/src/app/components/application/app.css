@@ -39,6 +39,10 @@
     display: none;
     background: none;
   }
+
+  .button {
+    display: block;
+  }
 }
 
 .button {

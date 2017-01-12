@@ -8,6 +8,7 @@ Recommendations are currently provided from the following areas:
 
 - [Tampere](https://www.freemaptools.com/radius-around-point.htm?clat=61.495007&clng=23.773459&r=1.71&fs=true&lc=4444ff&lw=3&fc=ddddff&nomoreradius=true)
 - [Helsinki](https://www.freemaptools.com/radius-around-point.htm?clat=60.1671&clng=24.9409&r=2.39&fs=true&lc=4444ff&lw=3&fc=ddddff&nomoreradius=true)
+- [Jyväskylä](https://www.freemaptools.com/radius-around-point.htm?clat=62.2398&clng=25.7556&r=1.04&fs=true&lc=4444ff&lw=3&fc=ddddff&nomoreradius=true)
 
 ## Contributing
 
