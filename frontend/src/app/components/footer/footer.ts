@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'after-footer',
@@ -9,6 +9,6 @@ import {Component} from '@angular/core';
             <a href="https://untappd.com/">data untappd:sta</a> &#183;
             <a href="https://twitter.com/Vilsepi">@vilsepi</a>
         </div>
-        `
+        `,
 })
-export default class Footer {}
+export default class FooterComponent {}

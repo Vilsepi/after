@@ -13,5 +13,6 @@ storage = {
 
 areas = {
   'tampere':  {'lat': 61.4950, 'lng': 23.7734, 'radius': 1.06},
-  'helsinki': {'lat': 60.1671, 'lng': 24.9409, 'radius': 1.49}
+  'helsinki': {'lat': 60.1671, 'lng': 24.9409, 'radius': 1.49},
+  'jyvaskyla': {'lat': 62.2398, 'lng': 25.7556, 'radius': 1.06}
 }

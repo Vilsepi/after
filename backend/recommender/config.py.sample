@@ -13,5 +13,6 @@ storage = {
 
 areas = [
   'tampere',
-  'helsinki'
+  'helsinki',
+  'jyvaskyla'
 ]
